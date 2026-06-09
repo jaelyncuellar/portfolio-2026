@@ -6,25 +6,40 @@
 // }
 
 export const projects = [
+    // {
+    //     slug: "url-shortener",
+    //     title: "Scalable URL Shortener",
+    //     description:
+    //         "High-performance URL shortening platform with Redis caching and JWT authentication.",
+    //     tech: ["ASP.NET Core", "PostgreSQL", "Redis", "JWT"],
+    //     image: "/projects/url-shortener.png",
+    //     github: "google.com",
+    //     overview: "hola hola",
+    //     featured: true,
+    // },
+
+
     {
-        slug: "url-shortener",
-        title: "Scalable URL Shortener",
-        description:
-            "High-performance URL shortening platform with Redis caching and JWT authentication.",
-        tech: ["ASP.NET Core", "PostgreSQL", "Redis", "JWT"],
-        image: "/projects/url-shortener.png",
-        github: "google.com",
-        overview: "hola hola",
+        slug: "premium-booking-platform",
+        title: "Premium Booking Platform",
+        images: [
+            "/images/premium-booking-platform/bookings.JPEG",
+            "/images/premium-booking-platform/admin.JPEG",
+            "/images/premium-booking-platform/logo.webp",
+            "/images/premium-booking-platform/rsvp.png",
+        ],
+        description: "Full-stack Next.js application for a premium personal brand. Booking requests, secure inquiry management, automated notifications, SEO optimization, and privacy-focused deployment infrastructure.",
+        tech: ["Next.js", "Node.js", "Supabase", "React", "Typescript", "Cloudflare"],
         featured: true,
     },
 
     {
-        slug: "ambitions",
-        title: "Ambitions of Idaho",
+        slug: "careconnect",
+        title: "CareConnect",
         description:
             "Healthcare-focused content management platform",
-        tech: ["React", "Express", "PostgreSQL"],
-        image: "/projects/ambitions.png",
+        tech: ["React", "Express", "PostgreSQL", "RestAPIs"],
+        images: ["/projects/careconnect.png"],
         github: "google.com",
         overview: "hola hola",
         featured: true,
@@ -36,24 +51,23 @@ export const projects = [
         description:
             "Cloud pricing analytics platform consuming AWS and Azure spot pricing data.",
         tech: ["AWS", "Azure", "Python"],
-        image: "/projects/cloud-cost-intelligence.png",
+        images: ["/projects/cloud-cost-intelligence.png"],
         github: "google.com",
         overview: "hola hola",
         featured: true,
     },
 
-
-    {
-        slug: "emotion-detection",
-        title: "Emotion Detection",
-        description:
-            "CNN-powered emotion recognition using FER2013.",
-        tech: ["Python", "TensorFlow", "OpenCV"],
-        image: "/projects/emotion-detection.png",
-        github: "google.com",
-        overview: "hola hola",
-        featured: false,
-    },
+    // {
+    //     slug: "emotion-detection",
+    //     title: "Emotion Detection",
+    //     description:
+    //         "CNN-powered emotion recognition using FER2013.",
+    //     tech: ["Python", "TensorFlow", "OpenCV"],
+    //     image: "/projects/emotion-detection.png",
+    //     github: "google.com",
+    //     overview: "hola hola",
+    //     featured: false,
+    // },
 
     {
         slug: "event-website-generator-rsvp",
@@ -61,7 +75,7 @@ export const projects = [
         description:
             "Event management platform with guest tracking.",
         tech: ["Node.js", "Express", "SQLite"],
-        image: "/projects/event-website-generator-rsvp.png",
+        images: ["/projects/event-website-generator-rsvp.png"],
         github: "google.com",
         overview: "hola hola",
         featured: true,

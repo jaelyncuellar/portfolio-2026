@@ -31,12 +31,12 @@ export const experiences: Experience[] = [
         company: "Freelance",
         period: "2026",
         description:
-            "Developed production-grade Next.js applications using TypeScript, App Router, SSR, API routes, and secure deployment architectures leveraging Cloudflare and VPS hosting.",
+            "Developed a Next.js premium booking platform application using TypeScript, App Router, SSR, API routes, and secure deployment architectures leveraging Cloudflare and VPS hosting.",
     },
 
     {
         title: "Full-Stack Engineering",
-        company: "Ambitions of Idaho",
+        company: "CareConnect",
         period: "2025 – 2026",
         description:
             "Designed and implemented a healthcare-focused content management platform with secure APIs, authentication workflows, schema validation, and centralized error handling.",

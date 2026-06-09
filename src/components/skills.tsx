@@ -9,12 +9,12 @@ export default function Skills() {
             id="skills"
             className="py-32 px-8"
         >
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto px-6">
                 <div className="mb-16">
-                    <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+                    <p className="text-sm uppercase tracking-[0.3em] text-[rgb(var(--muted))]">
                         Expertise
                     </p>
-                    <h2 className="text-5xl font-bold mt-3">
+                    <h2 className="heading-1 text-4xl md:text-5xl font-bold mt-4 mb-16">
                         Technical Expertise
                     </h2>
                 </div>
@@ -23,10 +23,13 @@ export default function Skills() {
                         ([category, skills]) => (
                         <div 
                             key={category}
-                            className="bg-zinc-950
-                            border border-ziznc-800
+                            className="bg-[rgb(var(--surface))]
+                            border border-[rgb(var(--border))]
                             rounded-3xl
                             p-8
+                            transition-all duration-300
+                            hover:border-[rgb(var(--accent))]
+                            hover:-translate-y-1
                             "
                         >
                             <h3 className="text-2xl font-semibold mb-4">
@@ -38,8 +41,10 @@ export default function Skills() {
                                         key={skill}
                                         className="
                                             px-3 py-1 
-                                            bg-zinc-900 border border-zinc-800
-                                            text-zinc-300 bg-card text-text rounded-full text-sm"
+                                            md:px-5 md:py-3
+                                            bg-[rgb(var(--background)/0.5)] 
+                                            text-[rgb(var(--accent))] bg-card text-text 
+                                            rounded-full text-sm"
                                     >
                                         {skill}
                                     </span>

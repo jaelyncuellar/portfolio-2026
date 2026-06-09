@@ -8,29 +8,21 @@ export default function Contact() {
 
         <div
           className="
-            bg-zinc-950
+            bg-[rgba(var(--surface),0.8)]
             border
-            border-zinc-800
+            border-[rgb(var(--border))]
             rounded-[40px]
             p-12
             text-center
           "
         >
-          <p className="uppercase tracking-[0.3em] text-zinc-500 text-sm">
+          <p className="uppercase tracking-[0.3em] text-[rgb(var(--muted))] text-sm">
             Contact
           </p>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="text-5xl font-bold mt-4 px-0">
             Let's Build Something Great
           </h2>
-
-          <p className="mt-8 text-zinc-400 max-w-2xl mx-auto">
-            I'm interested in Software Engineering,
-            Backend Engineering,
-            <br></br>
-            Cloud Infrastructure,
-            and Information Security opportunities.
-          </p>
 
           <div
             className="
@@ -48,7 +40,7 @@ export default function Contact() {
                 px-6
                 py-3
                 rounded-full
-                bg-[#C8A97E]
+                bg-[rgba(var(--accent)/0.8)]
                 text-black
                 font-medium
               "
