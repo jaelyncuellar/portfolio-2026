@@ -12,16 +12,12 @@ export default function Home() {
   return (
     <main className="bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
       <Navbar />
-        <Hero />
-        <Reveal>
-       <FeaturedWork />
-       </Reveal>
-    <Reveal>
-      <ProjectGrid />
-      </Reveal>
-      <Skills />
-      <Experience />
-      <Contact />
+      <Hero />
+      <Reveal><FeaturedWork /></Reveal>
+      {/* <Reveal> <ProjectGrid /> </Reveal> */}
+      <Reveal><Skills /></Reveal>
+      <Reveal><Experience /></Reveal>
+      <Reveal><Contact /></Reveal>      
     </main>
   );
 }

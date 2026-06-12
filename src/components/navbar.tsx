@@ -46,7 +46,7 @@ export default function Navbar() {
             </Link>
             {/* Desktop nav */}
             <div className="hidden gap-8 text-lg md:flex">
-                <a href="#projects">Projects</a>
+                <a href="#featured-work">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>

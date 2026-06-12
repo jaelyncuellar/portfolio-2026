@@ -1,14 +1,53 @@
 // large luxury cards: 
 // ━━━━━━━━━━━━━━━━━━
 
-import { projects } from "@/data/projects";
+"use client"
+import { Project, projects } from "@/data/projects";
+import next from "next";
 import Image from "next/image";
+import { useState, useEffect } from 'react';
 
 export default function FeaturedWork() {
     const featuredProjects = projects.filter(project => project.featured);
+    const [selectedImages, setSelectedImages] = useState<Record<string, number>>({}); 
+    const [activeProject, setActiveProject] = useState<string | null>(null); 
+    const galleryProject = featuredProjects.find(p=>p.slug === activeProject); 
+
+    const getCurrentImage = (slug:string) => 
+        selectedImages[slug] ?? 0; 
+
+    const openGallery = (slug:string) => { 
+        setActiveProject(slug); 
+    }; 
+    const closeGallery = () => { 
+        setActiveProject(null); 
+    }; 
+
+    const nextImage = (project: any) => { 
+        setSelectedImages(prev => ({
+            ...prev,
+            [project.slug]:
+                ((prev[project.slug] ?? 0)+1)
+                % project.images.length
+        }));
+    };
+
+    // cycles backward 
+    const prevImage = (project: any) => {
+        setSelectedImages(prev => ({
+            ...prev,
+            [project.slug]:
+                ((prev[project.slug] ?? 0) - 1 +
+                project.images.length)
+            % project.images.length 
+        }));
+    };
 
     return (
-        <section className="px-8 py-32">
+        <section 
+            id="featured-work"
+            className="px-8 py-32"
+        >
             {/* max width container */}
             <div className="max-w-6xl mx-auto px-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[rgb(var(--muted))]">
@@ -30,7 +69,9 @@ export default function FeaturedWork() {
                             "
                         >
                             {/* CARDS - COLS ON LG SCREENS */}
-                            <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div className={`grid gap-12 ${ 
+                                project.images?.length ? "md:grid-cols-2" : "md:grid-cols-1"
+                            }`}>
                                 {/* LEFT SIDE */}
                                 <div>
                                     {/* TITLE */}
@@ -57,41 +98,104 @@ export default function FeaturedWork() {
                                         ))}
                                     </div>
                                 </div>
+
                                 {/* RIGHT SIDE - IMAGES*/}
-                                <div className="relative h-[350px] group"> 
-                                    {project.images.slice(0,3).map((image, index)=> (
-                                        <div
-                                            key={image}
-                                            className="
-                                                absolute inset-0
-                                                transition-all duration-500
-                                                group-hover:scale-[1.02]
-                                            "
-                                            style={{
-                                                transform: `
-                                                    translate(${index*12}px, ${index*12}px)
-                                                    rotate(${index === 0 ? 0 : index % 2 ? - 3 : 3}deg)
-                                                `,
-                                                zIndex: 3-index,
-                                            }}
-                                        >
-                                            <Image
-                                                src={image}
-                                                alt="project.title"
-                                                fill
-                                                className="
-                                                    object-cover rounded-2xl
-                                                    border border-[rgb(var(--border))]
-                                                    shadow-lg
-                                                    group-hover:-translate-y-4
-                                                "
-                                            ></Image>
-                                        </div>
-                                    ))}
-                                </div>
+                                {project.images?.length > 0 && ( 
+                                    <div 
+                                        className="relative h-[350px] 
+                                            group cursor-pointer
+                                            transition-transform duration-500
+                                            hover:scale-[1.02]
+                                        "
+                                        onClick={() => openGallery(project.slug)} // image is clickable 
+                                    > 
+                                        {project.images.slice(0,3).map((image, index) => (
+                                            <div
+                                                key={image} // current image 
+                                                className="absolute inset-0"
+                                                style={{
+                                                    transform: `
+                                                        translate(${index*12}px, ${index*12}px)
+                                                        rotate(${index === 0 ? 0 : index % 2 ? -3 : 3}deg)
+                                                    `,
+                                                    zIndex: 3-index,
+                                                }}
+                                            >
+                                                <Image
+                                                    src={image}
+                                                    alt={project.title}
+                                                    fill
+                                                    className="
+                                                        object-cover
+                                                        rounded-2xl
+                                                        border border-[rgb(var(--border))]
+                                                        shadow-xl
+                                                        transition-all duration-500
+                                                        group-hover:-translate-y-3
+                                                    "
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
+
+
+                    {/* MODAL */}
+                    {activeProject && galleryProject && ( 
+                        <div 
+                            className="
+                                fixed inset-0 
+                                z-50 bg-black/90 
+                                backdrop-blur-md 
+                                flex items-center justify-center 
+                                p-8
+                            "
+                        >
+                            {/* LEFT ARROW */}
+                            <button 
+                                onClick={()=>prevImage(galleryProject)}
+                                className="
+                                    absolute left-6
+                                    text-white text-5xl
+                                "
+                                > ← 
+                            </button>
+
+                            <div className="relative w-full max-w-6xl h-[80vh]">
+                                <Image
+                                    src={galleryProject.images[
+                                        getCurrentImage(galleryProject.slug)
+                                        ]
+                                    }
+                                    alt={galleryProject.title}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+
+                            {/* RIGHT ARROW */}
+                            <button
+                                onClick={() => nextImage(galleryProject)}
+                                className="
+                                    absolute right-6
+                                    text-white text-3xl
+                                    "
+                                >
+                                → 
+                            </button>
+
+                            {/* x  */}
+                            <button
+                            onClick={closeGallery}
+                            className="absolute top-6 right-6 text-white text-3xl"
+                            >
+                            ✕
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
