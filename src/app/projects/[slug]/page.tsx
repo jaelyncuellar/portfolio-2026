@@ -22,7 +22,7 @@ export default function ProjectPage({
                     {project.title}
                 </h1>
                 <p className="mt-8">
-                    {project.overview}
+                    {project.description}
                 </p>
                 <div className="flex gap-2 flex-wrap mt-10">
                     {project.tech.map((tech, idx) => (
