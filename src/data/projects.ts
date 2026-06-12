@@ -13,10 +13,10 @@ export const projects = [
         slug: "premium-booking-platform",
         title: "Premium Booking Platform",
         images: [
-            "/images/premium-booking-platform/bookings.JPEG",
-            "/images/premium-booking-platform/admin.JPEG",
+            "/images/premium-booking-platform/bookings.webp",
+            "/images/premium-booking-platform/admin.webp",
             "/images/premium-booking-platform/logo.webp",
-            "/images/premium-booking-platform/rsvp.png",
+            "/images/premium-booking-platform/rsvp.webp",
         ],
 
         description: "Full-stack Next.js application for a premium personal brand. Booking requests, secure inquiry management, automated notifications, SEO optimization, and privacy-focused deployment infrastructure.",
