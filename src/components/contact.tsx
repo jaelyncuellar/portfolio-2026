@@ -1,81 +1,56 @@
+import { LinkedinIcon, GithubIcon } from "./icons";
+import { Mail, MapPin } from "lucide-react";
+import { profile } from "@/data/profile";
+
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-32 px-8"
-    >
-      <div className="max-w-4xl mx-auto">
-
-        <div
-          className="
-            bg-[rgba(var(--surface),0.8)]
-            border
-            border-[rgb(var(--border))]
-            rounded-[40px]
-            p-12
-            text-center
-          "
-        >
-          <p className="uppercase tracking-[0.3em] text-[rgb(var(--muted))] text-sm">
-            Contact
+    <section id="contact" className="section">
+      <div className="container">
+        <div className="max-w-4xl mx-auto rounded-[40px] border border-[rgb(var(--border))] bg-[rgb(var(--surface)/0.8)] p-10 md:p-16 text-center shadow-[var(--shadow-subtle)]">
+          <p className="section-label mb-4">06 — Contact</p>
+          <h2
+            className="heading-1 font-semibold"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Let&apos;s build something great.
+          </h2>
+          <p className="mt-6 text-[rgb(var(--muted))] max-w-xl mx-auto">
+            I&apos;m currently open to software engineering roles — remote or on
+            the East Coast. My inbox is always open.
           </p>
 
-          <h2 className="text-5xl font-bold mt-4 px-0">
-            Let's Build Something Great
-          </h2>
-
-          <div
-            className="
-              flex
-              flex-col
-              md:flex-row
-              justify-center
-              gap-4
-              mt-12
-            "
-          >
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:jluvcuellar@gmail.com"
-              className="
-                px-6
-                py-3
-                rounded-full
-                bg-[rgba(var(--accent)/0.8)]
-                text-black
-                font-medium
-              "
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[rgb(var(--accent))] text-white font-medium hover:bg-[rgb(var(--accent-hover))] transition-colors"
             >
-              Email Me
+              <Mail size={18} />
+              {profile.email}
             </a>
-
             <a
-              href="https://github.com/jaelyncuellar"
+              href={profile.github}
               target="_blank"
-              className="
-                px-6
-                py-3
-                rounded-full
-                border
-                border-zinc-700
-              "
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-[rgb(var(--foreground)/0.25)] font-medium hover:border-[rgb(var(--accent))] hover:text-[rgb(var(--accent-hover))] transition-colors"
             >
+              <GithubIcon size={18} />
               GitHub
             </a>
-
             <a
-              href="https://linkedin.com/in/jaelyncuellar"
+              href={profile.linkedin}
               target="_blank"
-              className="
-                px-6
-                py-3
-                rounded-full
-                border
-                border-zinc-700
-              "
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-[rgb(var(--foreground)/0.25)] font-medium hover:border-[rgb(var(--accent))] hover:text-[rgb(var(--accent-hover))] transition-colors"
             >
+              <LinkedinIcon size={18} />
               LinkedIn
             </a>
           </div>
+
+          <p className="mt-8 inline-flex items-center gap-2 text-sm text-[rgb(var(--muted))]">
+            <MapPin size={15} />
+            {profile.location} · {profile.availability}
+          </p>
         </div>
       </div>
     </section>

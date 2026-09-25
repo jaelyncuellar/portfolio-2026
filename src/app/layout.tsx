@@ -21,11 +21,12 @@ export const metadata: Metadata = {
       },
     ],
   }, 
-  title: "JaelynCuellar | Official Site",
-  description: "Portfolio - Jaelyn Cuellar. Software Engineer & Web Developer.",
+  title: "Jaelyn Cuellar — Software Engineer",
+  description:
+    "Portfolio and interactive CV of Jaelyn Cuellar, Full-Stack Software Engineer. Duke CS (AI & ML) building healthcare platforms, booking systems, and backend services.",
   openGraph: { 
-    title: "JaelynCuellar", 
-    description: "Portfolio - Jaelyn Cuellar. Software Engineer & Web Developer.",
+    title: "Jaelyn Cuellar — Software Engineer", 
+    description: "Portfolio and interactive CV of Jaelyn Cuellar, Full-Stack Software Engineer.",
     url: "https://jaelyncuellar.com", 
     siteName: "JaelynCuellar", 
     images: [ 

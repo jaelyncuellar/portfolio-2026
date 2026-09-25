@@ -142,3 +142,119 @@ body {
 .section {
   padding-block: var(--section-padding);
 }
+
+/* ---------- skills ticker ---------- */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker-scroll 32s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* ---------- interactive CV sheet ---------- */
+.cv-section {
+  margin-bottom: 1.1rem;
+}
+.cv-h2 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #111;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 0.25rem;
+  margin: 0 0 0.6rem;
+}
+.cv-entry {
+  margin-bottom: 0.7rem;
+}
+.cv-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.cv-left {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+}
+.cv-right {
+  font-size: 0.8rem;
+  color: #666;
+  white-space: nowrap;
+}
+.cv-sub {
+  font-size: 0.82rem;
+  color: #555;
+  font-style: italic;
+  margin: 0.1rem 0 0.25rem;
+}
+.cv-list {
+  margin: 0.25rem 0 0;
+  padding-left: 1.05rem;
+  font-size: 0.88rem;
+  color: #2b2b2b;
+  line-height: 1.5;
+}
+.cv-list li {
+  margin-bottom: 0.2rem;
+}
+.cv-list li::marker {
+  color: #b98a4e;
+}
+.cv-skills p {
+  margin: 0.2rem 0;
+  font-size: 0.88rem;
+  color: #2b2b2b;
+  line-height: 1.5;
+}
+.cv-cat {
+  font-weight: 700;
+}
+.cv-edu-line {
+  margin: 0.2rem 0;
+  font-size: 0.88rem;
+  color: #2b2b2b;
+}
+
+/* ---------- print: clean one-page CV ---------- */
+@page {
+  size: Letter;
+  margin: 0.55in 0.62in;
+}
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  .cv-page {
+    background: #fff !important;
+    min-height: auto !important;
+  }
+  .cv-page > div:last-child {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .cv-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

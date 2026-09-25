@@ -1,82 +1,88 @@
-// timeline layout 
-
-// 2025 - Present
-
-// Independent Software Engineer
-
-// Built full-stack applications,
-// AI systems, and client websites.
-
-// ─────────────────────
-
-// 2024
-
-// Computational Imaging Research
-
-// Computer Vision
-// Machine Learning
-// Image Processing
-
-
 export type Experience = {
-    title: string;
-    company: string;
-    period: string;
-    description: string;
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  tags: string[];
+  /** bullets used on the site timeline */
+  bullets: string[];
+  /** backend-résumé variant bullets (used on the /cv page when "Backend" is selected) */
+  bulletsBackend?: string[];
 };
 
 export const experiences: Experience[] = [
-    {
-        title: "Research Assistant (App Development)",
-        company: "Bass Connections, Duke University",
-        period: "Aug 2022 – Dec 2023",
-        description:
-            "Contributed to the development of a digital research platform for a global Alcohol Use Disorder study through software development, code reviews, and user documentation.",
-    },
-    {
-        title: "Software Engineer",
-        company: "Code+",
-        period: "Summer 2023",
-        description:
-            "Built cloud cost-intelligence software integrating AWS and Azure pricing APIs while collaborating in Agile engineering teams.",
-    },
+  {
+    title: "Software Engineer",
+    company: "CareConnect",
+    period: "2025 – 2026",
+    location: "Idaho",
+    tags: ["PostgreSQL", "Express", "React", "JWT", "REST APIs"],
+    bullets: [
+      "Owned full-stack development of a healthcare data platform: designed the PostgreSQL schema, built the Express REST API with JWT/bcrypt authentication, and shipped the React frontend consuming it.",
+      "Improved reliability across the stack with centralized error handling, request schema validation, and secure authentication flows.",
+      "Translated business requirements into technical solutions through iterative Agile delivery.",
+    ],
+    bulletsBackend: [
+      "Designed and built the REST API layer (Express + PostgreSQL) serving healthcare user data to client applications.",
+      "Implemented JWT authentication with bcrypt password hashing, centralized error handling, and request schema validation to harden API reliability.",
+      "Modeled the PostgreSQL schema and data-access patterns for maintainable, extensible backend services.",
+      "Delivered backend features through iterative Agile development, translating business requirements into API contracts.",
+    ],
+  },
+  {
+    title: "Full-Stack Web Developer",
+    company: "V Studio",
+    period: "Mar 2026 – May 2026",
+    location: "Idaho",
+    tags: ["Next.js", "TypeScript", "API Routes", "Cloudflare", "CI/CD"],
+    bullets: [
+      "Built and deployed a cloud-hosted Next.js + TypeScript application, owning features end-to-end from API routes and database to UI.",
+      "Designed backend workflows for booking and notification systems and the frontend surfaces that drive them, emphasizing maintainable architecture.",
+      "Set up secure routing, automated backups, Git/GitHub CI workflows, and production monitoring; gathered requirements directly from stakeholders.",
+    ],
+    bulletsBackend: [
+      "Designed backend workflows for booking and notification systems using TypeScript and Next.js API routes.",
+      "Implemented secure routing, automated backups, and production monitoring for a cloud-hosted application.",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company: "Code Plus",
+    period: "Summer 2023",
+    location: "North Carolina",
+    tags: ["AWS", "Azure", "Python", "APIs", "IAM"],
+    bullets: [
+      "Developed cloud-based analytics solutions on live AWS and Azure pricing data; built data ingestion pipelines and backend services for real-time cost analysis.",
+      "Implemented secure IAM policies and API integrations; delivered features through Agile sprints with design discussions and code reviews.",
+    ],
+  },
+  {
+    title: "Teaching Assistant, Intro to Computer Science",
+    company: "Duke University",
+    period: "Spring 2023",
+    location: "Durham, NC",
+    tags: ["Python", "Mentorship", "Code Review"],
+    bullets: [
+      "Supported 100+ students weekly across lab sessions through hands-on code review and debugging.",
+    ],
+  },
+  {
+    title: "Technical Project Manager",
+    company: "Code Plus",
+    period: "Summer 2024",
+    location: "North Carolina",
+    tags: ["Agile", "Leadership", "Delivery"],
+    bullets: [
+      "Drove 6 concurrent Agile engineering teams to delivery of production web and data applications with zero missed sprint milestones.",
+    ],
+  },
+];
 
-    {
-        title: "Teaching Assistant",
-        company: "Duke University",
-        period: "Spring 2023",
-        description:
-            "Supported 100+ students in computer science Python fundamentals through debugging guidance, code reviews, and problem-solving instruction.",
-    },
-
-    {
-        title: "Technical Project Manager",
-        company: "Code+",
-        period: "Summer 2024",
-        description:
-            "Led six Agile software engineering teams and coordinated technical delivery across concurrent web and data engineering projects.",
-    },
-
-    {
-        title: "Full-Stack Engineering",
-        company: "CareConnect",
-        period: "2025 – 2026",
-        description:
-            "Designed and implemented a healthcare-focused content management platform with secure APIs, authentication workflows, schema validation, and centralized error handling.",
-    },
-    {
-        title: "Full-Stack Web Developer",
-        company: "Freelance",
-        period: "2026",
-        description:
-            "Developed a Next.js premium booking platform application using TypeScript, App Router, SSR, API routes, and secure deployment architectures leveraging Cloudflare and VPS hosting.",
-    },
-    // {
-    //     title: "Technical SEO Engineer",
-    //     company: "Co-Founder",
-    //     period: "2026 – Present",
-    //     description:
-    //         "Improved website performance, indexing, metadata, and technical SEO while optimizing deployment architectures and user experience metrics.",
-    // },
-
+/** Order of experience entries on the backend-résumé variant of the /cv page */
+export const backendExperienceOrder = [
+  "Software Engineer|CareConnect",
+  "Software Engineer|Code Plus",
+  "Full-Stack Web Developer|V Studio",
+  "Teaching Assistant, Intro to Computer Science|Duke University",
+  "Technical Project Manager|Code Plus",
 ];
