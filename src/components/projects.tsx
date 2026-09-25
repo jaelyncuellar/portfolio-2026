@@ -78,17 +78,30 @@ function FeaturedCard({ p }: { p: Project }) {
         </p>
         <div className="mt-3 flex items-center justify-between gap-4">
           <p className="text-sm text-[rgb(var(--faint))]">{p.tech.join(" · ")}</p>
-          {p.github && (
-            <a
-              href={p.github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${p.title} on GitHub`}
-              className="text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors shrink-0"
-            >
-              <GithubIcon size={17} />
-            </a>
-          )}
+          <div className="flex items-center gap-4 shrink-0">
+            {p.site && (
+              <a
+                href={p.site}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors"
+              >
+                Live site
+                <ArrowUpRight size={14} />
+              </a>
+            )}
+            {p.github && (
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${p.title} on GitHub`}
+                className="text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors"
+              >
+                <GithubIcon size={17} />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </motion.article>
@@ -114,6 +127,17 @@ function CompactRow({ p }: { p: Project }) {
           <p className="text-[rgb(var(--faint))]">
             {[p.role, p.period].filter(Boolean).join(" · ")}
           </p>
+        )}
+        {p.site && (
+          <a
+            href={p.site}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 font-semibold text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors"
+          >
+            Live site
+            <ArrowUpRight size={14} />
+          </a>
         )}
         {p.github && (
           <a

@@ -68,6 +68,18 @@ export default async function ProjectPage({ params }: Props) {
           {project.tech.join(" · ")}
         </p>
 
+        {project.site && (
+          <a
+            href={project.site}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 mr-8 inline-flex items-center gap-1.5 font-medium u-link"
+          >
+            Visit live site
+            <ArrowUpRight size={15} />
+          </a>
+        )}
+
         {project.github && (
           <a
             href={project.github}

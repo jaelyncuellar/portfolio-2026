@@ -15,6 +15,8 @@ export type Project = {
   tech: string[];
   /** null hides the GitHub button */
   github: string | null;
+  /** live site URL (renders a "Visit live site" link) */
+  site?: string;
   featured: boolean;
   /** internal: listed in the Projects section of the /cv page (never badged in the UI) */
   onResume: boolean;
@@ -112,16 +114,12 @@ export const projects: Project[] = [
     period: "Jun 2026 – Sep 2026",
     company: "Electric Sun Tanning",
     category: "client",
-    images: [
-      "/images/salon-booking/hero.webp",
-      "/images/salon-booking/admin.webp",
-      "/images/salon-booking/reviews.webp",
-      "/images/salon-booking/booking.webp",
-    ],
+    images: [],
     description:
-      "Salon website for Electric Sun Tanning with online booking, client management, Instagram content integration, and an analytics dashboard for tracking revenue, appointments, memberships, and service performance.",
-    tech: ["React", "TypeScript", "Vite", "Node.js", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/jaelyncuellar/sun-tan-salon",
+      "Website for Electric Sun Tanning, a Caldwell, Idaho tanning salon — designed and built on Wix with service showcases for UV tanning, red-light therapy, the Cocoon wellness pod, spray tanning, and teeth whitening, plus membership packages, a savings program, and online booking.",
+    tech: ["Wix", "Responsive design"],
+    github: null,
+    site: "https://www.electricsuntanningcaldwell.com",
     featured: true,
     onResume: false,
   },
