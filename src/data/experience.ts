@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
   {
     title: "Software Engineer",
     company: "CareConnect",
-    period: "2025 – 2026",
+    period: "May 2025 – Nov 2025",
     location: "Idaho",
     tags: ["PostgreSQL", "Express", "React", "JWT", "REST APIs"],
     bullets: [

@@ -123,7 +123,7 @@ export default function CvPage() {
           for a clean one-page document.
         </p>
 
-        <article className="cv-sheet rounded-[var(--radius-lg)] border border-[rgb(var(--border))] bg-white shadow-[var(--shadow-subtle)] px-8 py-10 md:px-14 md:py-12">
+        <article className="cv-sheet rounded-2xl border border-[rgb(var(--border))] bg-white shadow-[var(--shadow-subtle)] px-8 py-10 md:px-14 md:py-12">
           <header className="text-center mb-6">
             <h1 className="text-[2rem] font-bold tracking-wide text-neutral-900">
               {profile.name}

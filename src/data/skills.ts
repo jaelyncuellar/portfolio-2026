@@ -75,19 +75,3 @@ export const skillGroupsBackend: Record<string, string[]> = {
 
 /** Default groups used across the site */
 export const skillGroups = skillGroupsFullStack;
-
-/** Flat marquee list for the skills ticker */
-export const skillTicker = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "PostgreSQL",
-  "Redis",
-  "ASP.NET Core",
-  "Python",
-  "AWS",
-  "JWT",
-  "Tailwind CSS",
-  "CI/CD",
-];

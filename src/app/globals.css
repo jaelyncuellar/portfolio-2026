@@ -1,44 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-/* call like: bg-[rgb(var(--background))] */
 :root {
-  /* COLORS  */
-  --background: 247 244 239;
-  --foreground: 24 24 27;
-  --muted: 113 113 122;
-  --border: 231 226 217;
-  --accent: 212 164 115;
-  --accent-hover: 195 150 102;
+  /* COLORS */
+  --background: 250 248 243;
+  --foreground: 26 26 28;
+  --muted: 110 110 116;
+  --faint: 150 148 142;
+  --border: 232 228 219;
+  --accent: 176 132 76;
+  --accent-hover: 158 117 64;
   --surface: 255 255 255;
-  --surface-hover: 252 251 248;
 
   /* TYPOGRAPHY */
   --font-heading: "Cormorant Garamond", serif;
   --font-body: "Manrope", sans-serif;
 
-  /* HERO */
-  --text-hero: clamp(4rem, 8vw, 7rem);
+  --text-hero: clamp(3.25rem, 6vw, 5.25rem);
+  --text-h1: clamp(2.5rem, 5vw, 4rem);
+  --text-h2: clamp(1.9rem, 3.4vw, 2.75rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.6rem);
 
-  /* HEADINGS */
-  --text-h1: clamp(3rem, 6vw, 5rem);
-  --text-h2: clamp(2.25rem, 4vw, 3.5rem);
-  --text-h3: clamp(1.5rem, 2vw, 2rem);
-
-  /* BODY */
-  --text-lg: 1.25rem;
+  --text-lg: 1.125rem;
   --text-base: 1rem;
   --text-sm: 0.875rem;
 
-  /* LINE HEIGHTS */
-  --leading-tight: 1.1;
-  --leading-normal: 1.6;
-  --leading-loose: 1.8;
+  --leading-tight: 1.12;
+  --leading-normal: 1.65;
+  --leading-loose: 1.85;
 
-  /* LETTER SPACING */
-  --tracking-tight: -0.04em;
+  --tracking-tight: -0.02em;
   --tracking-normal: 0em;
-  --tracking-wide: 0.18em;
+  --tracking-wide: 0.16em;
 
   /* SPACING */
   --space-xs: 0.5rem;
@@ -46,25 +39,19 @@
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 6rem;
-  --space-2xl: 8rem;
-  --space-3xl: 12rem;
 
   /* LAYOUT */
-  --container-width: 1200px;
-  --section-padding: 8rem;
-  --navbar-height: 90px;
+  --container-width: 1080px;
+  --section-padding: 6rem;
 
   /* EFFECTS */
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 32px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
 
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.4s ease;
-  --transition-slow: 0.7s ease;
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.3s ease;
 
-  --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.04);
-
+  --shadow-subtle: 0 1px 2px rgba(26, 26, 28, 0.05);
 }
 
 /* BASE */
@@ -79,28 +66,26 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  letter-spacing: var(--tracking-normal);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--surface);
-  /* soft white */
+  background: rgb(var(--accent) / 0.22);
 }
 
-/* TYPOGRAPHY  */
+/* TYPOGRAPHY */
 .hero-title {
   font-family: var(--font-heading);
   font-size: var(--text-hero);
   line-height: var(--leading-tight);
-  letter-spacing: 0.95;
+  letter-spacing: var(--tracking-tight);
+  font-weight: 600;
 }
 
 .heading-1 {
@@ -108,34 +93,38 @@ body {
   font-size: var(--text-h1);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
+  font-weight: 600;
 }
 
 .heading-2 {
   font-family: var(--font-heading);
   font-size: var(--text-h2);
   line-height: var(--leading-tight);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
 }
 
 .heading-3 {
   font-family: var(--font-heading);
   font-size: var(--text-h3);
+  font-weight: 600;
 }
 
 .section-label {
   font-weight: 600;
-  font-size: var(--text-sm);
+  font-size: 0.78rem;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--accent);
+  color: rgb(var(--faint));
 }
 
 .text-muted {
-  color: var(--muted);
+  color: rgb(var(--muted));
 }
 
 /* LAYOUT HELPERS */
 .container {
-  width: min(90%, var(--container-width));
+  width: min(92%, var(--container-width));
   margin-inline: auto;
 }
 
@@ -143,20 +132,22 @@ body {
   padding-block: var(--section-padding);
 }
 
-/* ---------- skills ticker ---------- */
-@keyframes ticker-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.hairline {
+  border-color: rgb(var(--border));
 }
-.ticker-track {
-  animation: ticker-scroll 32s linear infinite;
+
+/* quiet link underline */
+.u-link {
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--accent) / 0.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-fast),
+    color var(--transition-fast);
 }
-.ticker-track:hover {
-  animation-play-state: paused;
+.u-link:hover {
+  text-decoration-color: rgb(var(--accent));
+  color: rgb(var(--accent-hover));
 }
 
 /* ---------- interactive CV sheet ---------- */
@@ -209,7 +200,7 @@ body {
   margin-bottom: 0.2rem;
 }
 .cv-list li::marker {
-  color: #b98a4e;
+  color: #b08c4c;
 }
 .cv-skills p {
   margin: 0.2rem 0;

@@ -1,8 +1,5 @@
 import Navbar from "@/components/navbar";
-import ScrollProgress from "@/components/scroll-progress";
-import BackToTop from "@/components/back-to-top";
 import Hero from "@/components/hero";
-import Ticker from "@/components/ticker";
 import About from "@/components/about";
 import Experience from "@/components/experience";
 import Projects from "@/components/projects";
@@ -16,10 +13,8 @@ import Reveal from "@/components/reveal";
 export default function Home() {
   return (
     <main className="bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
-      <ScrollProgress />
       <Navbar />
       <Hero />
-      <Ticker />
       <Reveal>
         <About />
       </Reveal>
@@ -42,7 +37,6 @@ export default function Home() {
         <Contact />
       </Reveal>
       <Footer />
-      <BackToTop />
     </main>
   );
 }

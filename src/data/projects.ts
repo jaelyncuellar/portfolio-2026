@@ -72,7 +72,7 @@ export const projects: Project[] = [
     slug: "careconnect",
     title: "Healthcare Management Platform",
     role: "Software Engineer",
-    period: "2025 – 2026",
+    period: "May 2025 – Nov 2025",
     images: [
       "/images/care-connect/care-connect-1.png",
       "/images/care-connect/care-connect-2.png",
