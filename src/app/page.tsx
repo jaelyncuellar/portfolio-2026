@@ -13,7 +13,7 @@ import Reveal from "@/components/reveal";
 export default function Home() {
   return (
     <main className="bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
-      <Navbar />
+      <Navbar tone="dark" />
       <Hero />
       <Reveal>
         <About />

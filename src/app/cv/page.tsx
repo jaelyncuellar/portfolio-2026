@@ -57,7 +57,7 @@ export default function CvPage() {
   const ordered = useMemo(() => orderExperiences(variant), [variant]);
   const relevant = ordered.slice(0, 3);
   const additional = ordered.slice(3);
-  const resumeProjects = projects.filter((p) => p.resume);
+  const resumeProjects = projects.filter((p) => p.onResume);
 
   const bulletsFor = (e: Experience) =>
     variant === "backend" ? e.bulletsBackend ?? e.bullets : e.bullets;

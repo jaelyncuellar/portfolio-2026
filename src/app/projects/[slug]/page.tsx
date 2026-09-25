@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
-import { projects } from "@/data/projects";
+import { projects, projectKicker } from "@/data/projects";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -32,12 +32,21 @@ export default async function ProjectPage({ params }: Props) {
           All projects
         </Link>
 
-        {(project.period || project.role) && (
-          <p className="section-label mb-3">
+        {projectKicker(project) ? (
+          <p className="section-label mb-3">{projectKicker(project)}</p>
+        ) : (
+          (project.period || project.role) && (
+            <p className="section-label mb-3">
+              {[project.role, project.period].filter(Boolean).join(" · ")}
+            </p>
+          )
+        )}
+        <h1 className="heading-1">{project.title}</h1>
+        {(project.period || project.role) && projectKicker(project) && (
+          <p className="mt-3 text-sm text-[rgb(var(--faint))]">
             {[project.role, project.period].filter(Boolean).join(" · ")}
           </p>
         )}
-        <h1 className="heading-1">{project.title}</h1>
         <p className="mt-6 text-lg text-[rgb(var(--muted))] leading-relaxed">
           {project.description}
         </p>

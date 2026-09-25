@@ -1,57 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  /* COLORS */
-  --background: 250 248 243;
-  --foreground: 26 26 28;
-  --muted: 110 110 116;
-  --faint: 150 148 142;
-  --border: 232 228 219;
-  --accent: 176 132 76;
-  --accent-hover: 158 117 64;
+  /* COLORS — warm paper, deep ink, brass */
+  --background: 247 244 236;
+  --foreground: 22 22 25;
+  --muted: 108 108 114;
+  --faint: 152 149 141;
+  --border: 230 225 214;
+  --accent: 178 134 58;
+  --accent-hover: 158 116 46;
+  --accent-soft: 178 134 58;
   --surface: 255 255 255;
+
+  /* dark surfaces */
+  --ink: 17 17 20;
+  --ink-soft: 28 28 33;
+  --pine: 13 46 37;
 
   /* TYPOGRAPHY */
   --font-heading: "Cormorant Garamond", serif;
   --font-body: "Manrope", sans-serif;
 
-  --text-hero: clamp(3.25rem, 6vw, 5.25rem);
+  --text-hero: clamp(3.75rem, 9vw, 8rem);
   --text-h1: clamp(2.5rem, 5vw, 4rem);
-  --text-h2: clamp(1.9rem, 3.4vw, 2.75rem);
-  --text-h3: clamp(1.25rem, 2vw, 1.6rem);
+  --text-h2: clamp(2rem, 3.6vw, 3rem);
+  --text-h3: clamp(1.3rem, 2vw, 1.65rem);
 
   --text-lg: 1.125rem;
   --text-base: 1rem;
   --text-sm: 0.875rem;
 
-  --leading-tight: 1.12;
+  --leading-tight: 1.08;
   --leading-normal: 1.65;
   --leading-loose: 1.85;
 
   --tracking-tight: -0.02em;
-  --tracking-normal: 0em;
-  --tracking-wide: 0.16em;
-
-  /* SPACING */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
+  --tracking-wide: 0.18em;
 
   /* LAYOUT */
-  --container-width: 1080px;
-  --section-padding: 6rem;
+  --container-width: 1160px;
+  --section-padding: 7rem;
 
   /* EFFECTS */
-  --radius-sm: 8px;
-  --radius-md: 14px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
 
   --transition-fast: 0.18s ease;
-  --transition-normal: 0.3s ease;
+  --transition-normal: 0.35s ease;
 
-  --shadow-subtle: 0 1px 2px rgba(26, 26, 28, 0.05);
+  --shadow-lift: 0 24px 60px -12px rgba(22, 22, 25, 0.18);
+  --shadow-subtle: 0 1px 2px rgba(22, 22, 25, 0.05);
 }
 
 /* BASE */
@@ -76,14 +75,14 @@ body {
 }
 
 ::selection {
-  background: rgb(var(--accent) / 0.22);
+  background: rgb(var(--accent) / 0.28);
 }
 
 /* TYPOGRAPHY */
 .hero-title {
   font-family: var(--font-heading);
   font-size: var(--text-hero);
-  line-height: var(--leading-tight);
+  line-height: 0.98;
   letter-spacing: var(--tracking-tight);
   font-weight: 600;
 }
@@ -111,10 +110,14 @@ body {
 }
 
 .section-label {
-  font-weight: 600;
-  font-size: 0.78rem;
+  font-weight: 700;
+  font-size: 0.76rem;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  color: rgb(var(--accent));
+}
+
+.section-label--muted {
   color: rgb(var(--faint));
 }
 
@@ -136,10 +139,14 @@ body {
   border-color: rgb(var(--border));
 }
 
+.hairline-light {
+  border-color: rgb(255 255 255 / 0.14);
+}
+
 /* quiet link underline */
 .u-link {
   text-decoration: underline;
-  text-decoration-color: rgb(var(--accent) / 0.55);
+  text-decoration-color: rgb(var(--accent) / 0.6);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: text-decoration-color var(--transition-fast),
@@ -148,6 +155,24 @@ body {
 .u-link:hover {
   text-decoration-color: rgb(var(--accent));
   color: rgb(var(--accent-hover));
+}
+
+/* dark-panel link underline */
+.u-link-light {
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--accent) / 0.7);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--transition-fast);
+}
+.u-link-light:hover {
+  text-decoration-color: #fff;
+}
+
+/* fine dotted texture for dark panels */
+.dot-grid {
+  background-image: radial-gradient(rgb(255 255 255 / 0.07) 1px, transparent 1px);
+  background-size: 26px 26px;
 }
 
 /* ---------- interactive CV sheet ---------- */
@@ -200,7 +225,7 @@ body {
   margin-bottom: 0.2rem;
 }
 .cv-list li::marker {
-  color: #b08c4c;
+  color: #b2863a;
 }
 .cv-skills p {
   margin: 0.2rem 0;

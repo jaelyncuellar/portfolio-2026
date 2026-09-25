@@ -8,6 +8,8 @@ export type Experience = {
   bullets: string[];
   /** backend-résumé variant bullets (used on the /cv page when "Backend" is selected) */
   bulletsBackend?: string[];
+  /** slug of the project case-study page showcasing this role */
+  caseStudySlug?: string;
 };
 
 export const experiences: Experience[] = [
@@ -17,6 +19,7 @@ export const experiences: Experience[] = [
     period: "May 2025 – Nov 2025",
     location: "Idaho",
     tags: ["PostgreSQL", "Express", "React", "JWT", "REST APIs"],
+    caseStudySlug: "careconnect",
     bullets: [
       "Owned full-stack development of a healthcare data platform: designed the PostgreSQL schema, built the Express REST API with JWT/bcrypt authentication, and shipped the React frontend consuming it.",
       "Improved reliability across the stack with centralized error handling, request schema validation, and secure authentication flows.",
@@ -35,6 +38,7 @@ export const experiences: Experience[] = [
     period: "Mar 2026 – May 2026",
     location: "Idaho",
     tags: ["Next.js", "TypeScript", "API Routes", "Cloudflare", "CI/CD"],
+    caseStudySlug: "brand-booking",
     bullets: [
       "Built and deployed a cloud-hosted Next.js + TypeScript application, owning features end-to-end from API routes and database to UI.",
       "Designed backend workflows for booking and notification systems and the frontend surfaces that drive them, emphasizing maintainable architecture.",

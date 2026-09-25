@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { experiences } from "@/data/experience";
 
 export default function Experience() {
@@ -14,14 +15,18 @@ export default function Experience() {
         <p className="section-label mb-4">02 · Experience</p>
         <h2 className="heading-2 mb-4">Where I&apos;ve worked</h2>
         <p className="text-[rgb(var(--muted))] max-w-2xl mb-12">
-          The same roles as my résumé — select any entry for details.
+          The same roles as my résumé — select any entry for details. Roles
+          with a case-study link open the full build story.
         </p>
 
         <div className="max-w-4xl border-t hairline">
           {experiences.map((job, i) => {
             const isOpen = open === i;
             return (
-              <div key={`${job.title}-${job.company}`} className="border-b hairline">
+              <div
+                key={`${job.title}-${job.company}`}
+                className="border-b hairline"
+              >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
@@ -31,8 +36,15 @@ export default function Experience() {
                     {job.period}
                   </span>
                   <span className="flex-1 min-w-0">
-                    <span className="block text-lg font-semibold tracking-tight group-hover:text-[rgb(var(--accent-hover))] transition-colors">
-                      {job.title}
+                    <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <span className="text-lg font-bold tracking-tight group-hover:text-[rgb(var(--accent-hover))] transition-colors">
+                        {job.title}
+                      </span>
+                      {job.caseStudySlug && (
+                        <span className="text-[0.68rem] uppercase tracking-[0.16em] font-bold text-[rgb(var(--accent))]">
+                          Case study
+                        </span>
+                      )}
                     </span>
                     <span className="mt-0.5 block text-sm text-[rgb(var(--muted))]">
                       {job.company} · {job.location}
@@ -70,6 +82,15 @@ export default function Experience() {
                         <p className="mt-4 text-sm text-[rgb(var(--faint))]">
                           {job.tags.join(" · ")}
                         </p>
+                        {job.caseStudySlug && (
+                          <Link
+                            href={`/projects/${job.caseStudySlug}`}
+                            className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold u-link"
+                          >
+                            View the {job.company} build
+                            <ArrowUpRight size={15} />
+                          </Link>
+                        )}
                       </div>
                     </motion.div>
                   )}
