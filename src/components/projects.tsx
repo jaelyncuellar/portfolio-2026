@@ -202,7 +202,7 @@ export default function Projects() {
     <section id="projects" className="section chapter-tint">
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <ChapterHead index="03" label="Work" title="Selected work" />
+          <ChapterHead index="04" label="Work" title="Selected work" />
           <div className="flex flex-wrap gap-x-7 gap-y-2 text-sm">
             {tabs.map((t) => (
               <button

@@ -4,7 +4,6 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { GithubIcon } from "@/components/icons";
 import { projects, type Project, type ProjectCategory } from "@/data/projects";
-import { profile } from "@/data/profile";
 
 export const metadata = {
   title: "All Projects — Jaelyn Cuellar",
@@ -33,14 +32,6 @@ const groups: { id: ProjectCategory; title: string; blurb: string }[] = [
     title: "Personal / Experiments",
     blurb: "Independent engineering — backends, ML pipelines, and apps.",
   },
-];
-
-const coursework = [
-  "ios101-* starters",
-  "HackDuke2023",
-  "cafe-menu",
-  "catphotoalbum",
-  "css-color-markers",
 ];
 
 function ProjectRow({ p }: { p: Project }) {
@@ -127,32 +118,6 @@ export default function AllProjectsPage() {
         );
       })}
 
-      <section className="container max-w-5xl pb-24">
-        <div className="rounded-[var(--radius-md)] bg-[rgb(var(--ink))] text-white px-7 py-9 md:px-10 md:py-11 relative overflow-hidden">
-          <div aria-hidden className="absolute inset-0 glitter opacity-35" />
-          <div className="relative">
-            <h2 className="heading-3 text-white mb-2">Coursework &amp; starters on GitHub</h2>
-            <p className="text-white/60 text-[0.95rem] leading-relaxed max-w-2xl mb-5">
-              Coursework starter repos live on GitHub directly rather than as
-              portfolio case studies — they&apos;re accounted for here so the
-              archive is complete, without pretending starters are portfolio projects.
-            </p>
-            <p className="text-sm text-white/75 leading-loose">
-              {coursework.join(" · ")}
-            </p>
-            <a
-              href={`${profile.github}?tab=repositories`}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 font-semibold u-link-light text-white"
-            >
-              <GithubIcon size={17} />
-              Browse all repositories on GitHub
-              <ArrowUpRight size={15} />
-            </a>
-          </div>
-        </div>
-      </section>
       <Footer />
     </main>
   );

@@ -5,7 +5,7 @@ import { profile } from "@/data/profile";
 export default function Contact() {
   return (
     <section id="contact" className="relative">
-      <div className="container section section--flush-b">
+      <div className="container section">
         <div className="max-w-3xl mx-auto text-center">
           <ChapterHead
             index="06"
@@ -66,9 +66,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-
-      {/* soft seam down into the ink footer — one continuous ending */}
-      <div aria-hidden className="seam-to-ink mt-16 md:mt-20" />
     </section>
   );
 }

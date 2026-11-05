@@ -38,7 +38,7 @@ export const experiences: Experience[] = [
     period: "Mar 2026 – May 2026",
     location: "Idaho",
     tags: ["Next.js", "TypeScript", "API Routes", "Cloudflare", "CI/CD"],
-    caseStudySlug: "brand-booking",
+    caseStudySlug: "vera-rose-studio",
     bullets: [
       "Built and deployed a cloud-hosted Next.js + TypeScript application, owning features end-to-end from API routes and database to UI.",
       "Designed backend workflows for booking and notification systems and the frontend surfaces that drive them, emphasizing maintainable architecture.",

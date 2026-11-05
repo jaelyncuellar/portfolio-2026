@@ -7,9 +7,9 @@ import { profile } from "@/data/profile";
 
 const links = [
   { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Work" },
-  { href: "#skills", label: "Skills" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];

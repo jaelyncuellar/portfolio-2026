@@ -93,6 +93,21 @@ export default async function ProjectPage({ params }: Props) {
           </a>
         )}
 
+        {project.video && (
+          <figure className="mt-14 border hairline bg-[rgb(var(--surface))] p-2 md:p-3">
+            <video
+              src={project.video}
+              poster="/images/premium-booking-platform/poster.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full h-auto"
+            />
+          </figure>
+        )}
+
         {project.images && project.images.length > 0 && (
           <div className="mt-14 grid gap-10">
             {project.images.map((src, i) => (

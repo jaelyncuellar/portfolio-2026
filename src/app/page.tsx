@@ -19,13 +19,13 @@ export default function Home() {
         <About />
       </Reveal>
       <Reveal>
+        <Skills />
+      </Reveal>
+      <Reveal>
         <Experience />
       </Reveal>
       <Reveal>
         <Projects />
-      </Reveal>
-      <Reveal>
-        <Skills />
       </Reveal>
       <Reveal>
         <Education />

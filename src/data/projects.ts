@@ -8,6 +8,8 @@ export type Project = {
   company?: string;
   category: ProjectCategory;
   images?: string[];
+  /** optional walkthrough video (renders before the image grid on the case-study page) */
+  video?: string;
   description: string;
   bullets?: string[];
   tech: string[];
@@ -141,22 +143,31 @@ export const projects: Project[] = [
     onResume: false,
   },
   {
-    slug: "brand-booking",
-    title: "Personal Brand & Booking Platform",
-    role: "Full-Stack Developer",
-    period: "Mar 2026 – May 2026",
-    company: "V Studio",
+    slug: "vera-rose-studio",
+    title: "Vera Rose Studio",
+    role: "Designer & Developer",
+    period: "Nov 2026",
+    company: "Vera Rose Studio",
     category: "professional",
     images: [
-      "/images/premium-booking-platform/bookings.webp",
-      "/images/premium-booking-platform/rsvp.webp",
-      "/images/premium-booking-platform/logo.webp",
-      "/images/premium-booking-platform/admin.webp",
+      "/images/premium-booking-platform/home.webp",
+      "/images/premium-booking-platform/gallery.webp",
+      "/images/premium-booking-platform/experience.webp",
+      "/images/premium-booking-platform/investment.webp",
+      "/images/premium-booking-platform/reserve.webp",
+      "/images/premium-booking-platform/mobile.webp",
     ],
+    video: "/images/premium-booking-platform/walkthrough.mp4",
     description:
-      "Full-stack Next.js application for a premium personal brand. Booking requests, secure inquiry management, automated notifications, SEO optimization, and privacy-focused deployment infrastructure.",
-    tech: ["Next.js", "Node.js", "Supabase", "React", "TypeScript", "Cloudflare"],
-    github: null,
+      "Website for Vera Rose Studio, a New York portrait & brand photography studio. An editorial glassmorphism design — full-screen glass-card heroes, a rose-and-ink palette, and dark mode by default with a light toggle — with pages for the studio experience, investment, and gallery, and a Reserve booking flow with a validated inquiry form.",
+    bullets: [
+      "Designed the full visual system: Playfair Display headlines, Cormorant body text, and script accents, with a rose primary colour used as an accent over near-black and cream.",
+      "Built glassmorphism surfaces (frosted glass navbar and hero cards with hairline borders and inset highlights) in Next.js + Tailwind CSS.",
+      "Reserve inquiry flow with the same validation discipline as a production booking form, including a honeypot spam trap.",
+      "Dark mode is the default theme (rendered server-side, no flash on load) with a stored-preference light toggle.",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/jaelyncuellar/vera-rose-studio",
     featured: true,
     onResume: false,
   },
@@ -197,19 +208,6 @@ export const projects: Project[] = [
     onResume: false,
   },
   {
-    slug: "event-website-fullstack",
-    title: "Event Website Generator & RSVP",
-    role: "Backend Developer",
-    period: "2024",
-    category: "personal",
-    images: [],
-    description: "Event management platform with guest tracking and RSVP workflows.",
-    tech: ["JavaScript", "Node.js", "SQLite"],
-    github: "https://github.com/jaelyncuellar/event-website-fullstack",
-    featured: false,
-    onResume: false,
-  },
-  {
     slug: "perception-project",
     title: "Perception Project — ORB / RGB-D Feature Tracking",
     role: "Perception Engineer",
@@ -219,30 +217,6 @@ export const projects: Project[] = [
       "Computer-vision project exploring ORB feature detection and RGB-D feature tracking.",
     tech: ["Python", "OpenCV", "ORB", "RGB-D"],
     github: "https://github.com/jaelyncuellar/perception-project",
-    featured: false,
-    onResume: false,
-  },
-  {
-    slug: "careConnect-iOS",
-    title: "CareConnect iOS",
-    role: "iOS Developer",
-    category: "personal",
-    images: [],
-    description: "iOS companion work for the CareConnect healthcare platform, built in Swift.",
-    tech: ["Swift", "iOS"],
-    github: "https://github.com/jaelyncuellar/careConnect-iOS",
-    featured: false,
-    onResume: false,
-  },
-  {
-    slug: "quinceanera-event",
-    title: "Quinceañera Event Site",
-    role: "Web Developer",
-    category: "client",
-    images: [],
-    description: "Client / personal event site built with CSS-forward design.",
-    tech: ["CSS", "HTML"],
-    github: "https://github.com/jaelyncuellar/quinceanera-event",
     featured: false,
     onResume: false,
   },

@@ -4,9 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 export default function CvBand() {
   return (
     <section aria-label="Interactive CV">
-      {/* soft seam: cream -> ink */}
-      <div aria-hidden className="seam-to-ink" />
-
       <div className="chapter-ink relative overflow-hidden">
         <div aria-hidden className="absolute inset-0 glitter opacity-40" />
         <div
@@ -40,9 +37,6 @@ export default function CvBand() {
           </Link>
         </div>
       </div>
-
-      {/* soft seam: ink -> cream */}
-      <div aria-hidden className="seam-to-cream" />
     </section>
   );
 }

@@ -51,16 +51,6 @@ export default function Hero() {
         <path d="M-20 150 C280 90, 460 220, 720 160 S1180 90, 1460 170" stroke="#ffffff" strokeWidth="1" />
         <path d="M-20 60 C220 10, 400 130, 720 70 S1180 0, 1460 80" stroke="#2dd4bf" strokeWidth="1" />
       </svg>
-      {/* soft fade into the cream of the next chapter — no hard edge */}
-      <div
-        aria-hidden
-        className="absolute bottom-0 inset-x-0 h-28 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 30%, rgb(var(--background)))",
-        }}
-      />
-
       <motion.div
         variants={container}
         initial="hidden"
@@ -220,7 +210,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[rgb(var(--foreground))]/45 hover:text-[rgb(var(--accent-hover))] transition-colors"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/40 hover:text-[rgb(var(--accent))] transition-colors"
       >
         <ArrowDown size={20} className="animate-bounce" />
       </motion.a>

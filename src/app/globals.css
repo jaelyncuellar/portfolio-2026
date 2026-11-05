@@ -208,16 +208,6 @@ body {
   color: #fff;
 }
 
-/* gradient seams between chapters of different tones */
-.seam-to-ink {
-  height: clamp(3rem, 6vw, 4.5rem);
-  background: linear-gradient(to bottom, rgb(var(--background)), rgb(var(--ink)));
-}
-.seam-to-cream {
-  height: clamp(3rem, 6vw, 4.5rem);
-  background: linear-gradient(to bottom, rgb(var(--ink)), rgb(var(--background)));
-}
-
 .hairline {
   border-color: rgb(var(--border));
 }

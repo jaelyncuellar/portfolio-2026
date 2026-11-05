@@ -14,7 +14,7 @@ export default function Experience() {
     <section id="experience" className="section">
       <div className="container">
         <ChapterHead
-          index="02"
+          index="03"
           label="Experience"
           title={<>Where I&apos;ve worked</>}
           lead={
