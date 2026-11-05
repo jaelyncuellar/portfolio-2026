@@ -5,7 +5,7 @@ export const profile = {
   initials: "JC",
   title: "Software Engineer — Backend & Robotics Perception",
   tagline:
-    "Building backend systems and robots that see — scalable services, perception pipelines, and software that holds up in the real world.",
+    "From scalable systems to intelligent machines, I build what's next.",
   email: "jluvcuellar@gmail.com",
   location: "Idaho, USA · relocating to NYC in January",
   availability: "Open to remote · NYC · East Coast · DC",

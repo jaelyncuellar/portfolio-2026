@@ -141,7 +141,7 @@ export default function Hero() {
                 className="sticker absolute -bottom-3 -left-4"
                 style={{ background: "#0b0f1a", color: "#2dd4bf", transform: "rotate(-4deg)" }}
               >
-                ✦ she builds it end to end
+                ✦ engineering the extraordinary
               </span>
             </div>
           </motion.div>

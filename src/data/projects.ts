@@ -173,7 +173,7 @@ export const projects: Project[] = [
   },
   {
     slug: "salon-booking",
-    title: "Electric Sun Tanning",
+    title: "Sun Tanning Salon",
     role: "Web Developer",
     period: "Jun 2026 – Sep 2026",
     company: "Electric Sun Tanning",
