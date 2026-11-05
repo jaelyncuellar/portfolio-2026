@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { profile } from "@/data/profile";
 import { education } from "@/data/education";
 
 const facts: { label: string; value: string; href?: string }[] = [
-  { label: "Location", value: profile.location },
-  { label: "Focus", value: "Full-stack platforms & backend systems" },
+  { label: "Location", value: "Idaho, USA — relocating to NYC in January" },
+  { label: "Focus", value: "Backend systems & robotics perception" },
   {
     label: "Education",
     value: `Duke University — B.S. Computer Science (AI & ML), ${education.period}`,
@@ -16,17 +17,26 @@ export default function About() {
     <section id="about" className="section">
       <div className="container">
         <p className="section-label mb-4">01 · About</p>
-        <h2 className="heading-2 mb-10 max-w-2xl">Engineer, end to end.</h2>
+        <h2 className="heading-2 mb-10 max-w-2xl">Engineer, end to end — <span className="italic text-[rgb(var(--accent-hover))]">robots included.</span></h2>
 
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-7">
-            <p className="text-lg leading-relaxed">{profile.summary}</p>
+            <div className="flex gap-6 items-start">
+              <Image
+                src="/images/jaelyn-portrait.png"
+                alt="Portrait of Jaelyn Cuellar"
+                width={160}
+                height={160}
+                className="hidden sm:block w-28 h-28 rounded-full object-cover border-2 border-[rgb(var(--accent)/0.5)] shadow-[0_12px_36px_-10px_rgba(233,63,216,0.45)] shrink-0 rotate-[-2deg]"
+              />
+              <p className="text-lg leading-relaxed">{profile.summary}</p>
+            </div>
             <p className="mt-5 text-[rgb(var(--muted))] leading-relaxed">
               I care about the parts users never see as much as the parts they
               do — schema design, API contracts, auth flows, caching — and the
-              interfaces that sit on top of them. From healthcare data platforms
-              to booking systems to ML pipelines, I take products from idea to
-              production and keep them reliable once they&apos;re there.
+              interfaces that sit on top of them. The same instinct now runs
+              through my perception work: detectors, trackers, and filters are
+              only useful if a robot can trust them frame after frame.
             </p>
             <p className="mt-6 text-sm text-[rgb(var(--muted))]">
               {education.honors.join(" · ")}

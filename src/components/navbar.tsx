@@ -69,6 +69,16 @@ export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) 
             </a>
           ))}
           <Link
+            href="/projects"
+            className={`transition-colors ${
+              overDark
+                ? "text-white/65 hover:text-white"
+                : "text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))]"
+            }`}
+          >
+            All projects
+          </Link>
+          <Link
             href="/cv"
             className="inline-flex items-center gap-1 px-5 py-2 rounded-full bg-[rgb(var(--accent))] text-white text-sm font-semibold hover:bg-[rgb(var(--accent-hover))] transition-colors"
           >
@@ -101,6 +111,13 @@ export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) 
                 {l.label}
               </a>
             ))}
+            <Link
+              href="/projects"
+              onClick={() => setMenuOpen(false)}
+              className="py-3 text-[1.05rem] border-b hairline"
+            >
+              All projects
+            </Link>
             <Link
               href="/cv"
               onClick={() => setMenuOpen(false)}

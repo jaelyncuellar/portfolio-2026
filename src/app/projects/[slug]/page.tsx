@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }: Props) {
       <Navbar />
       <section className="container pt-32 md:pt-40 pb-24 max-w-4xl">
         <Link
-          href="/#projects"
+          href="/projects"
           className="inline-flex items-center gap-2 text-sm text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors mb-10"
         >
           <ArrowLeft size={16} />

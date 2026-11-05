@@ -1,28 +1,80 @@
-export type ProjectCategory = "professional" | "client" | "personal";
+export type ProjectCategory = "professional" | "client" | "personal" | "robotics";
 
 export type Project = {
   slug: string;
   title: string;
   role?: string;
   period?: string;
-  /** employer or client this was built for */
   company?: string;
   category: ProjectCategory;
   images?: string[];
   description: string;
-  /** résumé-style bullet highlights (engineering projects) */
   bullets?: string[];
   tech: string[];
-  /** null hides the GitHub button */
   github: string | null;
-  /** live site URL (renders a "Visit live site" link) */
   site?: string;
   featured: boolean;
-  /** internal: listed in the Projects section of the /cv page (never badged in the UI) */
   onResume: boolean;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "detection-tracking-pipeline",
+    title: "Detection + Tracking Pipeline",
+    role: "Perception Engineer",
+    period: "Nov 2026",
+    category: "robotics",
+    images: [],
+    description:
+      "Multi-object detection and tracking pipeline that keeps one persistent ID per object through motion and occlusion.",
+    bullets: [
+      "YOLO11n ONNX detector paired with a SORT-style IoU tracker and a constant-velocity Kalman filter tracker.",
+      "Verified over 60 frames with car, pedestrian, and truck each holding 1 track ID, and an occlusion check passed.",
+      "Includes a KITTI-style scorer for tracking evaluation.",
+    ],
+    tech: ["Python", "YOLO11n (ONNX)", "Kalman Filter", "OpenCV"],
+    github: "https://github.com/jaelyncuellar/detection-tracking-pipeline",
+    featured: true,
+    onResume: true,
+  },
+  {
+    slug: "ekf-sensor-fusion",
+    title: "EKF Sensor Fusion — IMU + GPS",
+    role: "State Estimation",
+    period: "Nov 2026",
+    category: "robotics",
+    images: [],
+    description:
+      "Extended Kalman Filter fusing high-rate IMU with low-rate GPS to estimate position, velocity, and heading — including through GPS outages.",
+    bullets: [
+      "EKF state [x, y, vx, vy, heading] fusing 20Hz IMU with 1Hz GPS.",
+      "2.06 m RMSE vs 3.45 m raw GPS and 196 m dead reckoning on a 120 s synthetic trip.",
+      "Held 1.76 m RMSE through a scripted 15 s GPS outage; 6 unit tests pass.",
+    ],
+    tech: ["Python", "NumPy", "Extended Kalman Filter", "Matplotlib"],
+    github: "https://github.com/jaelyncuellar/ekf-sensor-fusion",
+    featured: true,
+    onResume: true,
+  },
+  {
+    slug: "ros2-perception-stack",
+    title: "ROS 2 Mini Perception Stack",
+    role: "Robotics Software Engineer",
+    period: "Nov 2026",
+    category: "robotics",
+    images: [],
+    description:
+      "A ROS 2 perception stack — simulated camera to detection to TF-based monocular localization — publishing standard vision_msgs throughout.",
+    bullets: [
+      "camera_sim → detection → TF-based monocular localizer publishing Detection3DArray.",
+      "Live map-frame RMSE 0.31 m over 1,384 localized objects; offline full-lap RMSE 0.25 m; 5 unit tests.",
+      "Full TF tree: map → odom → base_link → camera_link → camera_optical_frame, with launch file and RViz config.",
+    ],
+    tech: ["ROS 2 Jazzy", "Python", "vision_msgs", "TF2", "RViz"],
+    github: "https://github.com/jaelyncuellar/ros2-mini-perception-stack",
+    featured: true,
+    onResume: true,
+  },
   {
     slug: "url-shortener",
     title: "Scalable URL Shortener",
@@ -31,13 +83,14 @@ export const projects: Project[] = [
     category: "personal",
     images: [],
     description:
-      "High-throughput URL shortening service built with ASP.NET Core, engineered for concurrent load with Redis caching and async processing.",
+      "Full URL shortening service built with ASP.NET Core — JWT auth, link CRUD and analytics, and a Redis cache-aside redirect path benchmarked against PostgreSQL-only redirects.",
     bullets: [
-      "Cut API response latency ~40% under concurrent workloads with Redis caching; optimized database access and async processing for peak-traffic throughput.",
-      "Applied design patterns and JWT-based authentication for maintainable, fault-tolerant services.",
+      "Redis cache-aside cut redirect latency ~75% (mean ~74 ms → ~18 ms) and delivered ~2.9× throughput at 50 concurrent clients / 1,000 requests per arm (verified Nov 2026 benchmark).",
+      "ASP.NET Core + EF Core on PostgreSQL, Redis cache-aside on redirects, batch-written click analytics, and JWT-based authentication.",
+      "Real backend wired end-to-end to the frontend: auth, dashboard, server-side search, and analytics from real click events; Docker Compose for PostgreSQL + Redis.",
     ],
-    tech: ["ASP.NET Core", "C#", "PostgreSQL", "Redis", "JWT"],
-    github: null,
+    tech: ["ASP.NET Core", "C#", "EF Core", "PostgreSQL", "Redis", "JWT", "Docker"],
+    github: "https://github.com/jaelyncuellar/url-shortener",
     featured: true,
     onResume: true,
   },
@@ -138,15 +191,52 @@ export const projects: Project[] = [
     onResume: false,
   },
   {
-    slug: "event-rsvp",
+    slug: "event-website-fullstack",
     title: "Event Website Generator & RSVP",
     role: "Backend Developer",
     period: "2024",
     category: "personal",
     images: [],
     description: "Event management platform with guest tracking and RSVP workflows.",
-    tech: ["Node.js", "Express", "SQLite"],
-    github: null,
+    tech: ["JavaScript", "Node.js", "SQLite"],
+    github: "https://github.com/jaelyncuellar/event-website-fullstack",
+    featured: false,
+    onResume: false,
+  },
+  {
+    slug: "perception-project",
+    title: "Perception Project — ORB / RGB-D Feature Tracking",
+    role: "Perception Engineer",
+    category: "robotics",
+    images: [],
+    description:
+      "Computer-vision project exploring ORB feature detection and RGB-D feature tracking.",
+    tech: ["Python", "OpenCV", "ORB", "RGB-D"],
+    github: "https://github.com/jaelyncuellar/perception-project",
+    featured: false,
+    onResume: false,
+  },
+  {
+    slug: "careConnect-iOS",
+    title: "CareConnect iOS",
+    role: "iOS Developer",
+    category: "personal",
+    images: [],
+    description: "iOS companion work for the CareConnect healthcare platform, built in Swift.",
+    tech: ["Swift", "iOS"],
+    github: "https://github.com/jaelyncuellar/careConnect-iOS",
+    featured: false,
+    onResume: false,
+  },
+  {
+    slug: "quinceanera-event",
+    title: "Quinceañera Event Site",
+    role: "Web Developer",
+    category: "client",
+    images: [],
+    description: "Client / personal event site built with CSS-forward design.",
+    tech: ["CSS", "HTML"],
+    github: "https://github.com/jaelyncuellar/quinceanera-event",
     featured: false,
     onResume: false,
   },
@@ -154,8 +244,10 @@ export const projects: Project[] = [
 
 /** label shown above a project card */
 export function projectKicker(p: Project): string | null {
+  if (p.category === "robotics") return "Robotics & Perception · Portfolio project";
   if (p.category === "professional" && p.company)
     return `${p.company} · Professional experience`;
   if (p.category === "client" && p.company) return `${p.company} · Client work`;
+  if (p.category === "client") return "Client work";
   return null;
 }

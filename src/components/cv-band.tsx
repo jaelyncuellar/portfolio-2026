@@ -15,11 +15,11 @@ export default function CvBand() {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(60% 80% at 50% 0%, rgba(178,134,58,0.25), transparent 70%)",
+                "radial-gradient(60% 80% at 50% 0%, rgba(233,63,216,0.28), transparent 70%)",
             }}
           />
           <div className="relative">
-            <p className="section-label mb-4" style={{ color: "#d8b25c" }}>
+            <p className="section-label mb-4" style={{ color: "#2dd4bf" }}>
               The short version
             </p>
             <h2

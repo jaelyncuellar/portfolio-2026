@@ -17,6 +17,15 @@ export const skillGroupsFullStack: Record<string, string[]> = {
     "JWT Authentication",
     "bcrypt",
     "ASP.NET Core",
+    "Python",
+  ],
+  "Robotics & Perception": [
+    "Python",
+    "ROS 2",
+    "Computer Vision / OpenCV",
+    "YOLO / ONNX",
+    "Kalman Filtering / Sensor Fusion",
+    "NumPy",
   ],
   "Databases": ["PostgreSQL", "Redis", "Supabase", "SQLite", "SQL"],
   "DevOps & Cloud": [
@@ -27,6 +36,7 @@ export const skillGroupsFullStack: Record<string, string[]> = {
     "Cloudflare",
     "VPS Hosting",
     "Linux/Unix",
+    "Docker",
   ],
   Fundamentals: [
     "Data Structures & Algorithms",
@@ -46,6 +56,15 @@ export const skillGroupsBackend: Record<string, string[]> = {
     "Next.js API Routes",
     "JWT Authentication",
     "bcrypt",
+    "Python",
+  ],
+  "Robotics & Perception": [
+    "Python",
+    "ROS 2",
+    "Computer Vision / OpenCV",
+    "YOLO / ONNX",
+    "Kalman Filtering / Sensor Fusion",
+    "NumPy",
   ],
   "Databases & Caching": [
     "PostgreSQL",
@@ -64,6 +83,7 @@ export const skillGroupsBackend: Record<string, string[]> = {
     "Vercel",
     "VPS Hosting",
     "Linux/Unix",
+    "Docker",
   ],
   "CS Fundamentals": [
     "Data Structures & Algorithms",

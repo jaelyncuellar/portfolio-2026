@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   }, 
   title: "Jaelyn Cuellar — Software Engineer",
   description:
-    "Portfolio and interactive CV of Jaelyn Cuellar, Full-Stack Software Engineer. Duke CS (AI & ML) building healthcare platforms, booking systems, and backend services.",
+    "Portfolio and interactive CV of Jaelyn Cuellar, Software Engineer — Backend & Robotics Perception. Duke CS (AI & ML) building backend systems, healthcare platforms, booking systems, and robots that see.",
   openGraph: { 
     title: "Jaelyn Cuellar — Software Engineer", 
-    description: "Portfolio and interactive CV of Jaelyn Cuellar, Full-Stack Software Engineer.",
+    description: "Portfolio and interactive CV of Jaelyn Cuellar, Software Engineer — Backend & Robotics Perception.",
     url: "https://jaelyncuellar.com", 
     siteName: "JaelynCuellar", 
     images: [ 
