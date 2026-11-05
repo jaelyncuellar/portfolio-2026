@@ -1,14 +1,20 @@
+import ChapterHead from "./chapter-head";
 import { education } from "@/data/education";
 
 export default function Education() {
   return (
-    <section id="education" className="section">
+    <section id="education" className="section-sm">
       <div className="container">
-        <p className="section-label mb-4">05 · Education</p>
-        <h2 className="heading-2 mb-10">Education</h2>
+        <ChapterHead
+          index="05"
+          label="Education"
+          title="Education"
+          className="mb-8"
+        />
 
-        <div className="max-w-4xl border-t hairline">
-          <div className="py-7 border-b hairline grid gap-2 md:grid-cols-[1fr_auto] md:gap-8 items-baseline">
+        {/* quiet interlude: one elegant row + a compact certifications line */}
+        <div className="max-w-4xl">
+          <div className="panel-soft px-6 py-6 md:px-8 md:py-7 grid gap-2 md:grid-cols-[1fr_auto] md:gap-8 items-baseline">
             <div>
               <h3 className="text-xl font-semibold tracking-tight">
                 {education.school}
@@ -27,20 +33,12 @@ export default function Education() {
             </p>
           </div>
 
-          {education.certifications.map((c) => (
-            <div
-              key={c.name}
-              className="py-5 border-b hairline grid gap-1 md:grid-cols-[1fr_auto] md:gap-8 items-baseline"
-            >
-              <div>
-                <p className="font-medium">{c.name}</p>
-                <p className="text-sm text-[rgb(var(--muted))]">{c.org}</p>
-              </div>
-              <p className="text-sm text-[rgb(var(--faint))] shrink-0">
-                {c.year}
-              </p>
-            </div>
-          ))}
+          <p className="mt-5 text-sm leading-relaxed text-[rgb(var(--muted))]">
+            <span className="section-label mr-3">Certifications</span>
+            {education.certifications
+              .map((c) => `${c.name} — ${c.org}, ${c.year}`)
+              .join("  ·  ")}
+          </p>
         </div>
       </div>
     </section>

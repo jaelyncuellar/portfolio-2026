@@ -41,11 +41,13 @@
 
   /* LAYOUT */
   --container-width: 1160px;
-  --section-padding: 7rem;
+  --section-padding: clamp(4.5rem, 9vw, 6rem);
+  --section-padding-sm: clamp(3rem, 6vw, 4rem);
 
   /* EFFECTS */
   --radius-sm: 10px;
   --radius-md: 18px;
+  --radius-lg: 24px;
 
   --transition-fast: 0.18s ease;
   --transition-normal: 0.35s ease;
@@ -63,6 +65,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* anchored chapters clear the fixed navbar */
+section[id] {
+  scroll-margin-top: 84px;
 }
 
 body {
@@ -137,6 +144,78 @@ body {
 
 .section {
   padding-block: var(--section-padding);
+}
+
+.section-sm {
+  padding-block: var(--section-padding-sm);
+}
+
+/* chapter that hands off to a gradient seam instead of its own bottom pad */
+.section--flush-b {
+  padding-bottom: 0;
+}
+
+/* chapter intro paragraph — one voice for every chapter opening */
+.lead {
+  max-width: 42rem;
+  color: rgb(var(--muted));
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+}
+
+.lead--dark {
+  color: rgb(255 255 255 / 0.65);
+}
+
+/* soft gradient hairline — pair with a centered ✦ in markup */
+.divider-wave {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(var(--accent) / 0.45),
+    rgb(var(--accent2) / 0.45),
+    transparent
+  );
+}
+
+/* tinted soft panel for grouped facts / quiet callouts */
+.panel-soft {
+  background: linear-gradient(
+    150deg,
+    rgb(var(--accent) / 0.06),
+    rgb(var(--accent2) / 0.05) 55%,
+    rgb(255 255 255 / 0.35)
+  );
+  border: 1px solid rgb(var(--border));
+  border-radius: var(--radius-lg);
+}
+
+/* full-bleed chapter backgrounds — soft alternation, no hard cuts */
+.chapter-tint {
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background)),
+    rgb(var(--accent) / 0.055) 22%,
+    rgb(var(--accent2) / 0.05) 60%,
+    rgb(var(--background))
+  );
+}
+
+.chapter-ink {
+  background: rgb(var(--ink));
+  color: #fff;
+}
+
+/* gradient seams between chapters of different tones */
+.seam-to-ink {
+  height: clamp(3rem, 6vw, 4.5rem);
+  background: linear-gradient(to bottom, rgb(var(--background)), rgb(var(--ink)));
+}
+.seam-to-cream {
+  height: clamp(3rem, 6vw, 4.5rem);
+  background: linear-gradient(to bottom, rgb(var(--ink)), rgb(var(--background)));
 }
 
 .hairline {

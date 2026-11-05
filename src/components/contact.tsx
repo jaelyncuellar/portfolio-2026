@@ -1,25 +1,39 @@
+import ChapterHead from "./chapter-head";
 import { LinkedinIcon, GithubIcon } from "./icons";
 import { profile } from "@/data/profile";
 
 export default function Contact() {
   return (
-    <section id="contact" className="section">
-      <div className="container">
-        <div className="max-w-3xl">
-          <p className="section-label mb-4">06 · Contact</p>
-          <h2 className="heading-1 mb-6">
-            Have a role in mind?
-            <br />
-            <span className="italic text-[rgb(var(--accent-hover))]">
-              Let&apos;s talk.
-            </span>
-          </h2>
-          <p className="text-[rgb(var(--muted))] max-w-xl text-lg">
+    <section id="contact" className="relative">
+      <div className="container section section--flush-b">
+        <div className="max-w-3xl mx-auto text-center">
+          <ChapterHead
+            index="06"
+            label="Contact"
+            align="center"
+            titleClassName="heading-1"
+            title={
+              <>
+                Have a role in mind?
+                <br />
+                <span className="italic text-[rgb(var(--accent-hover))]">
+                  Let&apos;s talk.
+                </span>
+              </>
+            }
+          />
+          <p className="lead mx-auto mt-6">
             Open to software engineering roles — remote or East Coast. The
             fastest way to reach me is email.
           </p>
 
-          <p className="mt-10">
+          <div aria-hidden className="mt-10 flex items-center gap-4 max-w-xs mx-auto">
+            <hr className="divider-wave flex-1" />
+            <span className="text-[rgb(var(--accent))] text-sm">✦</span>
+            <hr className="divider-wave flex-1" />
+          </div>
+
+          <p className="mt-8">
             <a
               href={`mailto:${profile.email}`}
               className="text-2xl md:text-4xl font-semibold u-link tracking-tight"
@@ -29,7 +43,7 @@ export default function Contact() {
             </a>
           </p>
 
-          <div className="mt-10 flex items-center gap-6 text-[rgb(var(--muted))]">
+          <div className="mt-10 flex items-center justify-center gap-6 text-[rgb(var(--muted))]">
             <a
               href={profile.github}
               target="_blank"
@@ -52,6 +66,9 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      {/* soft seam down into the ink footer — one continuous ending */}
+      <div aria-hidden className="seam-to-ink mt-16 md:mt-20" />
     </section>
   );
 }

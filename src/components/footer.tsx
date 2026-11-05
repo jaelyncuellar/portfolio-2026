@@ -5,8 +5,11 @@ import { profile } from "@/data/profile";
 
 export default function Footer() {
   return (
-    <footer className="bg-[rgb(var(--ink))] text-white mt-8">
-      <div className="container py-14 md:py-16">
+    <footer className="relative overflow-hidden bg-[rgb(var(--ink))] text-white">
+      {/* glitter carried down from the hero / CV chapter — the ending
+          picks up the same sky the story opened under */}
+      <div aria-hidden className="absolute inset-0 glitter opacity-30" />
+      <div className="relative container py-14 md:py-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 pb-10 border-b hairline-light">
           <div>
             <p

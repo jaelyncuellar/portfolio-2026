@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "./icons";
+import ChapterHead from "./chapter-head";
 import {
   projects,
   projectKicker,
@@ -152,7 +153,7 @@ function FeaturedCard({ p }: { p: Project }) {
 
 function CompactRow({ p }: { p: Project }) {
   return (
-    <article className="group border-b hairline py-6 grid gap-2 md:grid-cols-[1fr_auto] md:gap-8 items-baseline">
+    <article className="group border-b hairline py-4 grid gap-2 md:grid-cols-[1fr_auto] md:gap-8 items-baseline">
       <div className="min-w-0">
         <Link href={`/projects/${p.slug}`}>
           <h3 className="text-xl font-semibold tracking-tight group-hover:text-[rgb(var(--accent-hover))] transition-colors">
@@ -198,13 +199,10 @@ export default function Projects() {
   const rest = visible.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section chapter-tint">
       <div className="container">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-4">
-          <div>
-            <p className="section-label mb-4">03 · Work</p>
-            <h2 className="heading-2">Selected work</h2>
-          </div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <ChapterHead index="03" label="Work" title="Selected work" />
           <div className="flex flex-wrap gap-x-7 gap-y-2 text-sm">
             {tabs.map((t) => (
               <button
@@ -222,13 +220,13 @@ export default function Projects() {
             ))}
           </div>
         </div>
-        <p className="text-[rgb(var(--muted))] max-w-2xl mb-12">
+        <p className="lead mt-5 mb-10">
           Robotics &amp; perception, professional experience, client work, and
           independent engineering — each with the story behind the build.
         </p>
 
         {featured.length > 0 && (
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-14">
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-10">
             {featured.map((p) => (
               <FeaturedCard key={p.slug} p={p} />
             ))}
@@ -236,7 +234,7 @@ export default function Projects() {
         )}
 
         {rest.length > 0 && (
-          <div className={featured.length > 0 ? "mt-16" : ""}>
+          <div className={featured.length > 0 ? "mt-12" : ""}>
             <p className="section-label section-label--muted mb-2">More engineering</p>
             <div className="border-t hairline">
               {rest.map((p) => (

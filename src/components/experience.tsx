@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
+import ChapterHead from "./chapter-head";
 import { experiences } from "@/data/experience";
 
 export default function Experience() {
@@ -12,25 +13,42 @@ export default function Experience() {
   return (
     <section id="experience" className="section">
       <div className="container">
-        <p className="section-label mb-4">02 · Experience</p>
-        <h2 className="heading-2 mb-4">Where I&apos;ve worked</h2>
-        <p className="text-[rgb(var(--muted))] max-w-2xl mb-12">
-          The same roles as my résumé — select any entry for details. Roles
-          with a case-study link open the full build story.
-        </p>
+        <ChapterHead
+          index="02"
+          label="Experience"
+          title={<>Where I&apos;ve worked</>}
+          lead={
+            <>
+              The same roles as my résumé — select any entry for details.
+              Roles with a case-study link open the full build story.
+            </>
+          }
+          className="mb-12"
+        />
 
-        <div className="max-w-4xl border-t hairline">
+        <div className="relative max-w-4xl border-t hairline md:pl-10">
+          {/* journey line — roles read as stops along one path (desktop) */}
+          <span
+            aria-hidden
+            className="hidden md:block absolute left-[5px] top-3 bottom-3 w-px bg-gradient-to-b from-[rgb(var(--accent)/0.55)] via-[rgb(var(--border))] to-[rgb(var(--accent2)/0.55)]"
+          />
           {experiences.map((job, i) => {
             const isOpen = open === i;
             return (
               <div
                 key={`${job.title}-${job.company}`}
-                className="border-b hairline"
+                className="relative border-b hairline"
               >
+                <span
+                  aria-hidden
+                  className={`hidden md:block absolute -left-10 top-[1.72rem] w-2.5 h-2.5 -translate-x-[0.5px] rounded-full ring-4 ring-[rgb(var(--background))] transition-colors ${
+                    isOpen ? "bg-[rgb(var(--accent))]" : "bg-[rgb(var(--faint))]"
+                  }`}
+                />
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="w-full flex items-baseline gap-6 py-6 text-left group"
+                  className="w-full flex items-baseline gap-6 py-5 text-left group"
                 >
                   <span className="hidden sm:block w-40 shrink-0 text-sm text-[rgb(var(--faint))]">
                     {job.period}
@@ -68,7 +86,7 @@ export default function Experience() {
                       transition={{ duration: 0.3, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-7 sm:pl-[11.5rem]">
+                      <div className="pb-6 sm:pl-[11.5rem]">
                         <ul className="space-y-2.5 max-w-3xl">
                           {job.bullets.map((b, j) => (
                             <li

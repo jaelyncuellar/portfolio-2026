@@ -51,17 +51,21 @@ export default function Hero() {
         <path d="M-20 150 C280 90, 460 220, 720 160 S1180 90, 1460 170" stroke="#ffffff" strokeWidth="1" />
         <path d="M-20 60 C220 10, 400 130, 720 70 S1180 0, 1460 80" stroke="#2dd4bf" strokeWidth="1" />
       </svg>
+      {/* soft fade into the cream of the next chapter — no hard edge */}
       <div
         aria-hidden
-        className="absolute bottom-0 inset-x-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(to top, rgba(11,15,26,0.92), transparent)" }}
+        className="absolute bottom-0 inset-x-0 h-28 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 30%, rgb(var(--background)))",
+        }}
       />
 
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative container pt-36 md:pt-44 pb-20 md:pb-24"
+        className="relative container pt-32 md:pt-36 pb-16 md:pb-20"
       >
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-8 items-center">
           <div>
@@ -155,7 +159,7 @@ export default function Hero() {
 
         <motion.div
           variants={item}
-          className="mt-16 pt-8 border-t hairline-light grid grid-cols-2 md:grid-cols-4 gap-6 text-sm"
+          className="mt-12 pt-6 border-t hairline-light grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-5 text-sm"
         >
           <div>
             <p className="text-white/40 text-xs uppercase tracking-[0.18em] mb-1.5">Based in</p>
@@ -185,16 +189,26 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* stats strip from profile data */}
-        <motion.div variants={item} className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {profile.stats.map((s) => (
-            <div key={s.label}>
-              <p className="text-2xl md:text-3xl font-bold tracking-tight">
+        {/* stats strip from profile data — slim, divider-separated */}
+        <motion.div
+          variants={item}
+          className="mt-8 flex flex-wrap gap-y-4"
+        >
+          {profile.stats.map((s, i) => (
+            <div
+              key={s.label}
+              className={
+                i === 0
+                  ? "pr-6"
+                  : "px-6 border-l border-white/10"
+              }
+            >
+              <p className="text-2xl md:text-[1.7rem] font-bold tracking-tight leading-none">
                 {"prefix" in s && s.prefix ? s.prefix : ""}
                 {s.value.toLocaleString()}
                 {s.suffix}
               </p>
-              <p className="mt-1 text-xs text-white/45 leading-snug">{s.label}</p>
+              <p className="mt-1.5 text-xs text-white/45 leading-snug">{s.label}</p>
             </div>
           ))}
         </motion.div>
@@ -206,7 +220,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 hover:text-[rgb(var(--accent))] transition-colors"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[rgb(var(--foreground))]/45 hover:text-[rgb(var(--accent-hover))] transition-colors"
       >
         <ArrowDown size={20} className="animate-bounce" />
       </motion.a>

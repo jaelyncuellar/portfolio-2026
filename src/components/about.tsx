@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ChapterHead from "./chapter-head";
 import { profile } from "@/data/profile";
 import { education } from "@/data/education";
 
@@ -16,8 +17,19 @@ export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
-        <p className="section-label mb-4">01 · About</p>
-        <h2 className="heading-2 mb-10 max-w-2xl">Engineer, end to end — <span className="italic text-[rgb(var(--accent-hover))]">robots included.</span></h2>
+        <ChapterHead
+          index="01"
+          label="About"
+          className="mb-10 max-w-2xl"
+          title={
+            <>
+              Engineer, end to end —{" "}
+              <span className="italic text-[rgb(var(--accent-hover))]">
+                robots included.
+              </span>
+            </>
+          }
+        />
 
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-7">
@@ -44,25 +56,29 @@ export default function About() {
           </div>
 
           <div className="md:col-span-5">
-            <dl className="border-t hairline">
-              {facts.map((f) => (
-                <div
-                  key={f.label}
-                  className="grid grid-cols-[110px_1fr] gap-4 py-4 border-b hairline"
-                >
-                  <dt className="text-sm text-[rgb(var(--faint))]">{f.label}</dt>
-                  <dd className="text-[0.95rem] font-medium">
-                    {f.href ? (
-                      <a href={f.href} className="u-link break-all">
-                        {f.value}
-                      </a>
-                    ) : (
-                      f.value
-                    )}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <div className="panel-soft px-6 py-2 md:px-7">
+              <dl>
+                {facts.map((f, i) => (
+                  <div
+                    key={f.label}
+                    className={`grid grid-cols-[110px_1fr] gap-4 py-3.5 ${
+                      i < facts.length - 1 ? "border-b hairline" : ""
+                    }`}
+                  >
+                    <dt className="text-sm text-[rgb(var(--faint))]">{f.label}</dt>
+                    <dd className="text-[0.95rem] font-medium">
+                      {f.href ? (
+                        <a href={f.href} className="u-link break-all">
+                          {f.value}
+                        </a>
+                      ) : (
+                        f.value
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
       </div>
