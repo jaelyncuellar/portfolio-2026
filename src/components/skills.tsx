@@ -17,8 +17,8 @@ function Chips({
           key={skill}
           className={`inline-flex items-center rounded-full border px-3 py-1.5 text-[0.82rem] font-medium leading-none ${
             featured
-              ? "border-[rgb(var(--accent)/0.4)] bg-white/60 text-[rgb(var(--foreground))]"
-              : "hairline bg-white/50 text-[rgb(var(--foreground)/0.88)]"
+              ? "border-[rgb(var(--accent)/0.45)] bg-white/[0.07] text-[rgb(var(--foreground))]"
+              : "hairline bg-white/[0.04] text-[rgb(var(--foreground)/0.88)]"
           }`}
         >
           {skill}
@@ -35,13 +35,13 @@ export default function Skills() {
   );
 
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section tint-teal">
       <div className="container">
         <ChapterHead
           index="02"
           label="Skills"
           title="Technical stack"
-          lead="The same stack as my résumé."
+          lead="Production-proven tools, grouped by discipline."
           className="mb-10"
         />
 
@@ -71,7 +71,7 @@ export default function Skills() {
           {rest.map(([cat, list]) => (
             <div
               key={cat}
-              className="h-full rounded-[var(--radius-lg)] border hairline bg-white/50 p-6"
+              className="h-full rounded-[var(--radius-lg)] border hairline bg-white/[0.04] p-6"
             >
               <div className="flex items-baseline justify-between gap-4">
                 <div>

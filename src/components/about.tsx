@@ -15,12 +15,13 @@ const facts: { label: string; value: string; href?: string }[] = [
 
 export default function About() {
   return (
-    <section id="about" className="section">
+    <section id="about" className="section tint-fuchsia">
       <div className="container">
         <ChapterHead
           index="01"
           label="About"
           className="mb-10 max-w-2xl"
+          lead="From scalable systems to intelligent machines, I build what's next."
           title={
             <>
               Engineer, end to end —{" "}
@@ -34,13 +35,18 @@ export default function About() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-7">
             <div className="flex gap-6 items-start">
-              <Image
-                src="/images/jaelyn-portrait.png"
-                alt="Portrait of Jaelyn Cuellar"
-                width={160}
-                height={160}
-                className="hidden sm:block w-28 h-28 rounded-full object-cover border-2 border-[rgb(var(--accent)/0.5)] shadow-[0_12px_36px_-10px_rgba(233,63,216,0.45)] shrink-0 rotate-[-2deg]"
-              />
+              <div className="hidden sm:flex flex-col items-center gap-3 shrink-0">
+                <Image
+                  src="/images/jaelyn-portrait.png"
+                  alt="Portrait of Jaelyn Cuellar"
+                  width={160}
+                  height={160}
+                  className="w-28 h-28 rounded-full object-cover border-2 border-[rgb(var(--accent)/0.5)] shadow-[0_12px_36px_-10px_rgba(233,63,216,0.45)] rotate-[-2deg]"
+                />
+                <p className="text-[0.8rem] font-semibold tracking-wide text-[rgb(var(--accent2))] whitespace-nowrap">
+                  ✦ engineering the extraordinary
+                </p>
+              </div>
               <p className="text-lg leading-relaxed">{profile.summary}</p>
             </div>
             <p className="mt-5 text-[rgb(var(--muted))] leading-relaxed">

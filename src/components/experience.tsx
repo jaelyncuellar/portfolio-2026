@@ -11,18 +11,13 @@ export default function Experience() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section tint-plum">
       <div className="container">
         <ChapterHead
           index="03"
           label="Experience"
           title={<>Where I&apos;ve worked</>}
-          lead={
-            <>
-              The same roles as my résumé — select any entry for details.
-              Roles with a case-study link open the full build story.
-            </>
-          }
+          lead="Select a role for its scope, outcomes, and stack."
           className="mb-12"
         />
 

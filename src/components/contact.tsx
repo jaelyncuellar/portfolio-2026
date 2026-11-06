@@ -4,7 +4,7 @@ import { profile } from "@/data/profile";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative">
+    <section id="contact" className="relative tint-center">
       <div className="container section">
         <div className="max-w-3xl mx-auto text-center">
           <ChapterHead
@@ -23,8 +23,8 @@ export default function Contact() {
             }
           />
           <p className="lead mx-auto mt-6">
-            Open to software engineering roles — remote or East Coast. The
-            fastest way to reach me is email.
+            Open to software engineering roles, remote or East Coast —
+            email is the fastest way to reach me.
           </p>
 
           <div aria-hidden className="mt-10 flex items-center gap-4 max-w-xs mx-auto">

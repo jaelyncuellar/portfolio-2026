@@ -153,7 +153,12 @@ function FeaturedCard({ p }: { p: Project }) {
 
 function CompactRow({ p }: { p: Project }) {
   return (
-    <article className="group border-b hairline py-4 grid gap-2 md:grid-cols-[1fr_auto] md:gap-8 items-baseline">
+    <article className="group border-b hairline py-4 grid gap-2 md:grid-cols-[auto_1fr_auto] md:gap-8 items-center">
+      {p.images && p.images.length > 0 && (
+        <Link href={`/projects/${p.slug}`} className="hidden md:block relative w-36 aspect-[16/10] overflow-hidden rounded-[var(--radius-sm)] border hairline shrink-0" aria-label={`${p.title} case study`}>
+          <Image src={p.images[0]} alt={p.title} fill sizes="144px" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
+        </Link>
+      )}
       <div className="min-w-0">
         <Link href={`/projects/${p.slug}`}>
           <h3 className="text-xl font-semibold tracking-tight group-hover:text-[rgb(var(--accent-hover))] transition-colors">
@@ -221,8 +226,8 @@ export default function Projects() {
           </div>
         </div>
         <p className="lead mt-5 mb-10">
-          Robotics &amp; perception, professional experience, client work, and
-          independent engineering — each with the story behind the build.
+          Robotics, backend systems, and client platforms — selected for
+          range and depth.
         </p>
 
         {featured.length > 0 && (
@@ -245,13 +250,6 @@ export default function Projects() {
         )}
 
         <div className="mt-14 flex flex-wrap items-center gap-6">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[rgb(var(--foreground))] text-[rgb(var(--background))] font-semibold hover:bg-[rgb(var(--accent-hover))] hover:text-white transition-colors"
-          >
-            Browse all projects
-            <ArrowRight size={17} />
-          </Link>
           <Link href="/cv" className="inline-flex items-center gap-2 font-semibold u-link">
             See how this maps to my résumé
             <ArrowRight size={16} />

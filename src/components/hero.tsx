@@ -20,12 +20,6 @@ const item: Variants = {
   },
 };
 
-const stickers = [
-  { label: "Robotics & Perception", bg: "#e93fd8", rotate: "-3deg" },
-  { label: "Backend Systems", bg: "#2dd4bf", color: "#0b0f1a", rotate: "2deg" },
-  { label: "NYC-bound ✦", bg: "#fff8f0", color: "#0b0f1a", rotate: "-2deg" },
-];
-
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[rgb(var(--ink))] text-white">
@@ -81,21 +75,7 @@ export default function Hero() {
               {profile.tagline}
             </motion.p>
 
-            <motion.div variants={item} className="mt-7 flex flex-wrap gap-3">
-              {stickers.map((s) => (
-                <span
-                  key={s.label}
-                  className="sticker"
-                  style={{
-                    background: s.bg,
-                    color: s.color ?? "#fff",
-                    transform: `rotate(${s.rotate})`,
-                  }}
-                >
-                  {s.label}
-                </span>
-              ))}
-            </motion.div>
+            
 
             <motion.div
               variants={item}
@@ -131,7 +111,7 @@ export default function Hero() {
             <div className="relative rotate-[2.5deg] hover:rotate-0 transition-transform duration-500">
               <Image
                 src="/images/jaelyn-portrait.png"
-                alt="Portrait of Jaelyn Cuellar with code and contour graphics"
+                alt="Portrait of Jaelyn Cuellar"
                 width={700}
                 height={700}
                 priority

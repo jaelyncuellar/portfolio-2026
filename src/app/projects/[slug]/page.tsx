@@ -25,11 +25,11 @@ export default async function ProjectPage({ params }: Props) {
       <Navbar />
       <section className="container pt-32 md:pt-40 pb-24 max-w-4xl">
         <Link
-          href="/projects"
+          href="/#projects"
           className="inline-flex items-center gap-2 text-sm text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors mb-10"
         >
           <ArrowLeft size={16} />
-          All projects
+          Selected work
         </Link>
 
         {projectKicker(project) ? (
@@ -97,7 +97,7 @@ export default async function ProjectPage({ params }: Props) {
           <figure className="mt-14 border hairline bg-[rgb(var(--surface))] p-2 md:p-3">
             <video
               src={project.video}
-              poster="/images/premium-booking-platform/poster.jpg"
+              poster={project.poster}
               autoPlay
               muted
               loop

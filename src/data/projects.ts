@@ -10,6 +10,8 @@ export type Project = {
   images?: string[];
   /** optional walkthrough video (renders before the image grid on the case-study page) */
   video?: string;
+  /** optional poster frame for the walkthrough video */
+  poster?: string;
   description: string;
   bullets?: string[];
   tech: string[];
@@ -26,7 +28,9 @@ export const projects: Project[] = [
     role: "Perception Engineer",
     period: "Nov 2026",
     category: "robotics",
-    images: [],
+    images: [
+      "/images/projects/detection-tracking.webp",
+    ],
     description:
       "Multi-object detection and tracking pipeline that keeps one persistent ID per object through motion and occlusion.",
     bullets: [
@@ -45,7 +49,9 @@ export const projects: Project[] = [
     role: "State Estimation",
     period: "Nov 2026",
     category: "robotics",
-    images: [],
+    images: [
+      "/images/projects/ekf-sensor-fusion.webp",
+    ],
     description:
       "Extended Kalman Filter fusing high-rate IMU with low-rate GPS to estimate position, velocity, and heading — including through GPS outages.",
     bullets: [
@@ -64,7 +70,10 @@ export const projects: Project[] = [
     role: "Robotics Software Engineer",
     period: "Nov 2026",
     category: "robotics",
-    images: [],
+    images: [
+      "/images/projects/ros2-topdown.webp",
+      "/images/projects/ros2-sample.webp",
+    ],
     description:
       "A ROS 2 perception stack — simulated camera to detection to TF-based monocular localization — publishing standard vision_msgs throughout.",
     bullets: [
@@ -83,7 +92,9 @@ export const projects: Project[] = [
     role: "Backend Engineer",
     period: "Present",
     category: "personal",
-    images: [],
+    images: [
+      "/images/projects/url-shortener.webp",
+    ],
     description:
       "Full URL shortening service built with ASP.NET Core — JWT auth, link CRUD and analytics, and a Redis cache-aside redirect path benchmarked against PostgreSQL-only redirects.",
     bullets: [
@@ -102,7 +113,9 @@ export const projects: Project[] = [
     role: "ML Developer",
     period: "Spring 2025",
     category: "personal",
-    images: [],
+    images: [
+      "/images/projects/dream-theme-analyzer.webp",
+    ],
     description:
       "NLP pipeline that automatically extracts themes from tens of thousands of dream journal entries using transformer embeddings and topic modeling.",
     bullets: [
@@ -158,6 +171,7 @@ export const projects: Project[] = [
       "/images/premium-booking-platform/mobile.webp",
     ],
     video: "/images/premium-booking-platform/walkthrough.mp4",
+    poster: "/images/premium-booking-platform/poster.jpg",
     description:
       "Website for Vera Rose Studio, a New York portrait & brand photography studio. An editorial glassmorphism design — full-screen glass-card heroes, a rose-and-ink palette, and dark mode by default with a light toggle — with pages for the studio experience, investment, and gallery, and a Reserve booking flow with a validated inquiry form.",
     bullets: [
@@ -188,6 +202,8 @@ export const projects: Project[] = [
     description:
       "Custom Salon Booking & Analytics platform built for Electric Sun Tanning, a local Caldwell, Idaho tanning salon — a React/TypeScript web app with online booking (a three-step flow: service, date & time, details), service showcases for UV tanning, spray tanning, and the Glow Package savings program, plus a private admin dashboard with revenue analytics, service-mix charts, and booking management.",
     tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Recharts"],
+    video: "/images/salon-booking/walkthrough.mp4",
+    poster: "/images/salon-booking/home.webp",
     github: "https://github.com/jaelyncuellar/salon-booking-analytics",
     site: "https://www.electricsuntanningcaldwell.com",
     featured: true,
@@ -199,7 +215,9 @@ export const projects: Project[] = [
     role: "Software Engineer",
     period: "Summer 2023",
     category: "personal",
-    images: [],
+    images: [
+      "/images/projects/cloud-cost-intelligence.webp",
+    ],
     description:
       "Cloud pricing analytics platform consuming live AWS and Azure spot pricing data for real-time infrastructure cost analysis.",
     tech: ["AWS", "Azure", "Python"],
@@ -212,7 +230,9 @@ export const projects: Project[] = [
     title: "Perception Project — ORB / RGB-D Feature Tracking",
     role: "Perception Engineer",
     category: "robotics",
-    images: [],
+    images: [
+      "/images/projects/perception-orb.webp",
+    ],
     description:
       "Computer-vision project exploring ORB feature detection and RGB-D feature tracking.",
     tech: ["Python", "OpenCV", "ORB", "RGB-D"],

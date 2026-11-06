@@ -2,20 +2,20 @@
 @import "tailwindcss";
 
 :root {
-  /* COLORS — warm cream, midnight teal-plum ink, fuchsia + electric teal */
-  --background: 255 248 240;
-  --foreground: 26 18 32;
-  --muted: 104 96 112;
-  --faint: 156 146 158;
-  --border: 242 226 216;
+  /* COLORS — deep ink background, warm cream text, fuchsia + electric teal */
+  --background: 10 13 24;
+  --foreground: 248 244 240;
+  --muted: 178 170 184;
+  --faint: 128 120 140;
+  --border: 47 41 66;
   --accent: 233 63 216;
-  --accent-hover: 192 38 180;
+  --accent-hover: 241 122 231;
   --accent-soft: 233 63 216;
   --accent2: 45 212 191;
-  --surface: 255 255 255;
+  --surface: 19 23 40;
 
   /* dark surfaces */
-  --ink: 11 15 26;
+  --ink: 6 8 17;
   --ink-soft: 20 24 42;
   --pine: 24 14 38;
 
@@ -52,8 +52,8 @@
   --transition-fast: 0.18s ease;
   --transition-normal: 0.35s ease;
 
-  --shadow-lift: 0 24px 60px -12px rgba(26, 18, 32, 0.22);
-  --shadow-subtle: 0 1px 2px rgba(26, 18, 32, 0.05);
+  --shadow-lift: 0 24px 60px -12px rgba(0, 0, 0, 0.6);
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* BASE */
@@ -184,9 +184,9 @@ body {
 .panel-soft {
   background: linear-gradient(
     150deg,
-    rgb(var(--accent) / 0.06),
-    rgb(var(--accent2) / 0.05) 55%,
-    rgb(255 255 255 / 0.35)
+    rgb(var(--accent) / 0.13),
+    rgb(var(--accent2) / 0.09) 55%,
+    rgb(255 255 255 / 0.04)
   );
   border: 1px solid rgb(var(--border));
   border-radius: var(--radius-lg);
@@ -197,8 +197,8 @@ body {
   background: linear-gradient(
     to bottom,
     rgb(var(--background)),
-    rgb(var(--accent) / 0.055) 22%,
-    rgb(var(--accent2) / 0.05) 60%,
+    rgb(var(--accent) / 0.10) 22%,
+    rgb(var(--accent2) / 0.08) 60%,
     rgb(var(--background))
   );
 }
@@ -374,4 +374,18 @@ body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+}
+
+/* distinctive chapter glows — same palette, different placement per section */
+.tint-fuchsia {
+  background: radial-gradient(55% 45% at 10% 0%, rgb(var(--accent) / 0.11), transparent 70%);
+}
+.tint-teal {
+  background: radial-gradient(55% 45% at 90% 0%, rgb(var(--accent2) / 0.10), transparent 70%);
+}
+.tint-plum {
+  background: linear-gradient(to bottom, transparent, rgb(var(--accent) / 0.05) 35%, rgb(var(--accent2) / 0.04) 70%, transparent);
+}
+.tint-center {
+  background: radial-gradient(45% 55% at 50% 42%, rgb(var(--accent) / 0.10), transparent 72%);
 }

@@ -25,8 +25,7 @@ export default function CvBand() {
             Take the CV with you.
           </h2>
           <p className="lead lead--dark mx-auto mb-9">
-            An interactive, print-ready CV mirroring my résumé — Full-Stack
-            and Backend editions, ready to save as PDF.
+            Print-ready, in Full-Stack and Backend editions.
           </p>
           <Link
             href="/cv"
