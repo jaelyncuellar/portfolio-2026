@@ -21,7 +21,6 @@ export default function About() {
           index="01"
           label="About"
           className="mb-10 max-w-2xl"
-          lead="From scalable systems to intelligent machines, I build what's next."
           title={
             <>
               Engineer, end to end —{" "}
