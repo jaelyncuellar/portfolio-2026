@@ -108,6 +108,32 @@ export default async function ProjectPage({ params }: Props) {
           </figure>
         )}
 
+        {project.youtube && (
+          <figure className="mt-14 border hairline bg-[rgb(var(--surface))] p-2 md:p-3">
+            <div className="relative aspect-video w-full">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${project.youtube.match(/[?&]v=([^&]+)/)?.[1] ?? ""}`}
+                title="Cloud Arbitrage — Duke OIT video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
+            <figcaption className="px-1 pt-3 pb-1">
+              <a
+                href={project.youtube}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 font-medium u-link"
+              >
+                Watch on YouTube
+                <ArrowUpRight size={15} />
+              </a>
+            </figcaption>
+          </figure>
+        )}
+
         {project.images && project.images.length > 0 && (
           <div className="mt-14 grid gap-10">
             {project.images.map((src, i) => (
@@ -125,6 +151,31 @@ export default async function ProjectPage({ params }: Props) {
               </figure>
             ))}
           </div>
+        )}
+
+        {project.document && (
+          <figure className="mt-14 border hairline bg-[rgb(var(--surface))] p-2 md:p-3">
+            <a href={project.document.href} target="_blank" rel="noreferrer">
+              <Image
+                src={project.document.image}
+                alt={project.document.label}
+                width={1224}
+                height={1584}
+                className="w-full h-auto"
+              />
+            </a>
+            <figcaption className="px-1 pt-3 pb-1">
+              <a
+                href={project.document.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 font-medium u-link"
+              >
+                {project.document.label}
+                <ArrowUpRight size={15} />
+              </a>
+            </figcaption>
+          </figure>
         )}
       </section>
       <Footer />

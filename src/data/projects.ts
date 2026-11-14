@@ -12,6 +12,10 @@ export type Project = {
   video?: string;
   /** optional poster frame for the walkthrough video */
   poster?: string;
+  /** optional YouTube watch URL (renders an embed on the case-study page) */
+  youtube?: string;
+  /** optional document shown after the image grid (e.g. a project flyer PDF) */
+  document?: { label: string; href: string; image: string };
   description: string;
   bullets?: string[];
   tech: string[];
@@ -218,6 +222,12 @@ export const projects: Project[] = [
     images: [
       "/images/projects/cloud-cost-intelligence.webp",
     ],
+    youtube: "https://www.youtube.com/watch?v=LZ-cErVn6Es",
+    document: {
+      label: "Cloud Arbitrage — project flyer (PDF)",
+      href: "/files/cloud-arbitrage-flyer.pdf",
+      image: "/images/cloud-cost-intelligence/flyer.webp",
+    },
     description:
       "Cloud pricing analytics platform consuming live AWS and Azure spot pricing data for real-time infrastructure cost analysis.",
     tech: ["AWS", "Azure", "Python"],
