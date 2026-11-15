@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600;1,9..144,700&family=Outfit:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT,WONK,wght@0,9..144,0..100,0..1,500..700;1,9..144,0..100,0..1,500..700&family=Outfit:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -93,7 +93,7 @@ body {
   line-height: 0.98;
   letter-spacing: var(--tracking-tight);
   font-weight: 600;
-  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+  font-variation-settings: "opsz" 9, "SOFT" 50, "WONK" 1;
 }
 
 .heading-1 {
