@@ -62,10 +62,6 @@ export default function Hero() {
 
             <motion.h1 variants={item} className="hero-title max-w-3xl">
               {profile.firstName}
-              <br />
-              <span className="italic text-[rgb(var(--accent))]">
-                {profile.lastName}
-              </span>
             </motion.h1>
 
             <motion.p
