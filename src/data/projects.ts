@@ -107,6 +107,8 @@ export const projects: Project[] = [
       "Real backend wired end-to-end to the frontend: auth, dashboard, server-side search, and analytics from real click events; Docker Compose for PostgreSQL + Redis.",
     ],
     tech: ["ASP.NET Core", "C#", "EF Core", "PostgreSQL", "Redis", "JWT", "Docker"],
+    video: "/images/url-shortener/walkthrough.mp4",
+    poster: "/images/url-shortener/walkthrough-poster.webp",
     github: "https://github.com/jaelyncuellar/url-shortener",
     featured: true,
     onResume: true,
