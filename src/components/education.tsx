@@ -36,7 +36,7 @@ export default function Education() {
           <p className="mt-5 text-sm leading-relaxed text-[rgb(var(--muted))]">
             <span className="section-label mr-3">Certifications</span>
             {education.certifications
-              .map((c) => `${c.name} — ${c.org}, ${c.year}`)
+              .map((c) => `${c.name} - ${c.org}, ${c.year}`)
               .join("  ·  ")}
           </p>
         </div>

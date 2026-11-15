@@ -49,7 +49,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ekf-sensor-fusion",
-    title: "EKF Sensor Fusion — IMU + GPS",
+    title: "EKF Sensor Fusion - IMU + GPS",
     role: "State Estimation",
     period: "Nov 2026",
     category: "robotics",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
       "/images/projects/ekf-sensor-fusion.webp",
     ],
     description:
-      "Extended Kalman Filter fusing high-rate IMU with low-rate GPS to estimate position, velocity, and heading — including through GPS outages.",
+      "Extended Kalman Filter fusing high-rate IMU with low-rate GPS to estimate position, velocity, and heading - including through GPS outages.",
     bullets: [
       "EKF state [x, y, vx, vy, heading] fusing 20Hz IMU with 1Hz GPS.",
       "2.06 m RMSE vs 3.45 m raw GPS and 196 m dead reckoning on a 120 s synthetic trip.",
@@ -79,7 +79,7 @@ export const projects: Project[] = [
       "/images/projects/ros2-sample.webp",
     ],
     description:
-      "A ROS 2 perception stack — simulated camera to detection to TF-based monocular localization — publishing standard vision_msgs throughout.",
+      "A ROS 2 perception stack - simulated camera to detection to TF-based monocular localization - publishing standard vision_msgs throughout.",
     bullets: [
       "camera_sim → detection → TF-based monocular localizer publishing Detection3DArray.",
       "Live map-frame RMSE 0.31 m over 1,384 localized objects; offline full-lap RMSE 0.25 m; 5 unit tests.",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       "/images/projects/url-shortener.webp",
     ],
     description:
-      "Full URL shortening service built with ASP.NET Core — JWT auth, link CRUD and analytics, and a Redis cache-aside redirect path benchmarked against PostgreSQL-only redirects.",
+      "Full URL shortening service built with ASP.NET Core - JWT auth, link CRUD and analytics, and a Redis cache-aside redirect path benchmarked against PostgreSQL-only redirects.",
     bullets: [
       "Redis cache-aside cut redirect latency ~75% (mean ~74 ms → ~18 ms) and delivered ~2.9× throughput at 50 concurrent clients / 1,000 requests per arm (verified Nov 2026 benchmark).",
       "ASP.NET Core + EF Core on PostgreSQL, Redis cache-aside on redirects, batch-written click analytics, and JWT-based authentication.",
@@ -179,7 +179,7 @@ export const projects: Project[] = [
     video: "/images/premium-booking-platform/walkthrough.mp4",
     poster: "/images/premium-booking-platform/poster.jpg",
     description:
-      "Website for Vera Rose Studio, a New York portrait & brand photography studio. An editorial glassmorphism design — full-screen glass-card heroes, a rose-and-ink palette, and dark mode by default with a light toggle — with pages for the studio experience, investment, and gallery, and a Reserve booking flow with a validated inquiry form.",
+      "Website for Vera Rose Studio, a New York portrait & brand photography studio. An editorial glassmorphism design - full-screen glass-card heroes, a rose-and-ink palette, and dark mode by default with a light toggle - with pages for the studio experience, investment, and gallery, and a Reserve booking flow with a validated inquiry form.",
     bullets: [
       "Designed the full visual system: Playfair Display headlines, Cormorant body text, and script accents, with a rose primary colour used as an accent over near-black and cream.",
       "Built glassmorphism surfaces (frosted glass navbar and hero cards with hairline borders and inset highlights) in Next.js + Tailwind CSS.",
@@ -206,7 +206,7 @@ export const projects: Project[] = [
       "/images/salon-booking/mobile.webp",
     ],
     description:
-      "Custom Salon Booking & Analytics platform built for Electric Sun Tanning, a local Caldwell, Idaho tanning salon — a React/TypeScript web app with online booking (a three-step flow: service, date & time, details), service showcases for UV tanning, spray tanning, and the Glow Package savings program, plus a private admin dashboard with revenue analytics, service-mix charts, and booking management.",
+      "Custom Salon Booking & Analytics platform built for Electric Sun Tanning, a local Caldwell, Idaho tanning salon - a React/TypeScript web app with online booking (a three-step flow: service, date & time, details), service showcases for UV tanning, spray tanning, and the Glow Package savings program, plus a private admin dashboard with revenue analytics, service-mix charts, and booking management.",
     tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Recharts"],
     video: "/images/salon-booking/walkthrough.mp4",
     poster: "/images/salon-booking/home.webp",
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     ],
     youtube: "https://www.youtube.com/watch?v=LZ-cErVn6Es",
     document: {
-      label: "Cloud Arbitrage — project flyer (PDF)",
+      label: "Cloud Arbitrage - project flyer (PDF)",
       href: "/files/cloud-arbitrage-flyer.pdf",
       image: "/images/cloud-cost-intelligence/flyer.webp",
     },
@@ -239,7 +239,7 @@ export const projects: Project[] = [
   },
   {
     slug: "perception-project",
-    title: "Perception Project — ORB / RGB-D Feature Tracking",
+    title: "Perception Project - ORB / RGB-D Feature Tracking",
     role: "Perception Engineer",
     category: "robotics",
     images: [

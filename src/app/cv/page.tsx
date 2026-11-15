@@ -64,7 +64,7 @@ export default function CvPage() {
 
   return (
     <main className="cv-page min-h-screen bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
-      {/* Toolbar — hidden when printing */}
+      {/* Toolbar - hidden when printing */}
       <div className="no-print sticky top-0 z-50 border-b border-[rgb(var(--border))] bg-[rgb(var(--background)/0.9)] backdrop-blur-xl">
         <div className="max-w-4xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <Link
@@ -153,7 +153,7 @@ export default function CvPage() {
               <div key={`${e.title}-${e.company}`} className="cv-entry">
                 <div className="cv-row">
                   <span className="cv-left">
-                    {e.title} — {e.company}
+                    {e.title} - {e.company}
                   </span>
                   <span className="cv-right">
                     {e.period} · {e.location}
@@ -173,7 +173,7 @@ export default function CvPage() {
               <div key={p.slug} className="cv-entry">
                 <div className="cv-row">
                   <span className="cv-left">
-                    {p.title} — {p.role}
+                    {p.title} - {p.role}
                   </span>
                   <span className="cv-right">{p.period}</span>
                 </div>
@@ -190,7 +190,7 @@ export default function CvPage() {
           <CvSection title="Education">
             <div className="cv-row">
               <span className="cv-left">
-                {education.school} — {education.degree}, {education.minor}
+                {education.school} - {education.degree}, {education.minor}
               </span>
               <span className="cv-right">
                 {education.period} · {education.location}
@@ -201,7 +201,7 @@ export default function CvPage() {
             </p>
             <p className="cv-edu-line">
               {education.certifications
-                .map((c) => `${c.org} — ${c.name} (${c.year})`)
+                .map((c) => `${c.org} - ${c.name} (${c.year})`)
                 .join("; ")}
             </p>
           </CvSection>
@@ -211,7 +211,7 @@ export default function CvPage() {
               <div key={`${e.title}-${e.company}`} className="cv-entry">
                 <div className="cv-row">
                   <span className="cv-left">
-                    {e.title} — {e.company}
+                    {e.title} - {e.company}
                   </span>
                   <span className="cv-right">
                     {e.period} · {e.location}

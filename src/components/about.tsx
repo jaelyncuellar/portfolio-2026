@@ -4,11 +4,11 @@ import { profile } from "@/data/profile";
 import { education } from "@/data/education";
 
 const facts: { label: string; value: string; href?: string }[] = [
-  { label: "Location", value: "Idaho, USA — relocating to NYC in January" },
+  { label: "Location", value: "Idaho, USA - relocating to NYC in January" },
   { label: "Focus", value: "Backend systems & robotics perception" },
   {
     label: "Education",
-    value: `Duke University — B.S. Computer Science (AI & ML), ${education.period}`,
+    value: `Duke University - B.S. Computer Science (AI & ML), ${education.period}`,
   },
   { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
 ];
@@ -23,7 +23,7 @@ export default function About() {
           className="mb-10 max-w-2xl"
           title={
             <>
-              Engineer, end to end —{" "}
+              Engineer, end to end -{" "}
               <span className="italic text-[rgb(var(--accent-hover))]">
                 robots included.
               </span>
@@ -50,7 +50,7 @@ export default function About() {
             </div>
             <p className="mt-5 text-[rgb(var(--muted))] leading-relaxed">
               I care about the parts users never see as much as the parts they
-              do — schema design, API contracts, auth flows, caching — and the
+              do - schema design, API contracts, auth flows, caching - and the
               interfaces that sit on top of them. The same instinct now runs
               through my perception work: detectors, trackers, and filters are
               only useful if a robot can trust them frame after frame.

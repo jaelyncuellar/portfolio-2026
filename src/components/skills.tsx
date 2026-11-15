@@ -45,7 +45,7 @@ export default function Skills() {
           className="mb-10"
         />
 
-        {/* featured group — current focus, full-width panel */}
+        {/* featured group - current focus, full-width panel */}
         <div
           className="panel-soft p-6 md:p-8 mb-5"
           style={{ borderColor: "rgb(var(--accent) / 0.38)" }}
@@ -59,14 +59,14 @@ export default function Skills() {
               />
             </div>
             <p className="text-sm text-[rgb(var(--muted))]">
-              Current focus — the stack behind my robotics portfolio
+              Current focus - the stack behind my robotics portfolio
               projects.
             </p>
           </div>
           <Chips list={featured} featured />
         </div>
 
-        {/* remaining groups — even two-column panel grid */}
+        {/* remaining groups - even two-column panel grid */}
         <div className="grid md:grid-cols-2 gap-5 items-stretch">
           {rest.map(([cat, list]) => (
             <div

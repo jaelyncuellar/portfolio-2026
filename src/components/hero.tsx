@@ -98,7 +98,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Portrait — tilted card, glowing ring echoing the photo's neon circle */}
+          {/* Portrait - tilted card, glowing ring echoing the photo's neon circle */}
           <motion.div variants={item} className="relative mx-auto w-full max-w-[380px] lg:max-w-[420px]">
             <div
               aria-hidden
@@ -133,7 +133,7 @@ export default function Hero() {
         >
           <div>
             <p className="text-white/40 text-xs uppercase tracking-[0.18em] mb-1.5">Based in</p>
-            <p className="text-white/90 font-medium">Idaho — NYC-bound Jan ✦</p>
+            <p className="text-white/90 font-medium">Idaho - NYC-bound Jan ✦</p>
           </div>
           <div>
             <p className="text-white/40 text-xs uppercase tracking-[0.18em] mb-1.5">Status</p>
@@ -159,7 +159,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* stats strip from profile data — slim, divider-separated */}
+        {/* stats strip from profile data - slim, divider-separated */}
         <motion.div
           variants={item}
           className="mt-8 flex flex-wrap gap-y-4"

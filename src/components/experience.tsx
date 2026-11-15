@@ -22,7 +22,7 @@ export default function Experience() {
         />
 
         <div className="relative max-w-4xl border-t hairline md:pl-10">
-          {/* journey line — roles read as stops along one path (desktop) */}
+          {/* journey line - roles read as stops along one path (desktop) */}
           <span
             aria-hidden
             className="hidden md:block absolute left-[5px] top-3 bottom-3 w-px bg-gradient-to-b from-[rgb(var(--accent)/0.55)] via-[rgb(var(--border))] to-[rgb(var(--accent2)/0.55)]"

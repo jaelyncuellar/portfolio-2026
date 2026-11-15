@@ -113,7 +113,7 @@ export default async function ProjectPage({ params }: Props) {
             <div className="relative aspect-video w-full">
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${project.youtube.match(/[?&]v=([^&]+)/)?.[1] ?? ""}`}
-                title="Cloud Arbitrage — Duke OIT video"
+                title="Cloud Arbitrage - Duke OIT video"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

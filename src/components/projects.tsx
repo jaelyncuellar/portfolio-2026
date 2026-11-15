@@ -226,7 +226,7 @@ export default function Projects() {
           </div>
         </div>
         <p className="lead mt-5 mb-10">
-          Robotics, backend systems, and client platforms — selected for
+          Robotics, backend systems, and client platforms - selected for
           range and depth.
         </p>
 

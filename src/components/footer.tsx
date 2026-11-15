@@ -6,7 +6,7 @@ import { profile } from "@/data/profile";
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[rgb(var(--ink))] text-white">
-      {/* glitter carried down from the hero / CV chapter — the ending
+      {/* glitter carried down from the hero / CV chapter - the ending
           picks up the same sky the story opened under */}
       <div aria-hidden className="absolute inset-0 glitter opacity-30" />
       <div className="relative container py-14 md:py-16">
@@ -20,7 +20,7 @@ export default function Footer() {
               <span className="text-[rgb(var(--accent))]">.</span>
             </p>
             <p className="mt-3 text-white/55 max-w-md">
-              {profile.title} — {profile.location}. Building reliable software,
+              {profile.title} - {profile.location}. Building reliable software,
               end to end.
             </p>
           </div>

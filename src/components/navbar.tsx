@@ -15,7 +15,7 @@ const links = [
 ];
 
 /**
- * tone="dark": sits over the dark hero — light text until scrolled,
+ * tone="dark": sits over the dark hero - light text until scrolled,
  * then settles into a frosted paper bar. tone="light": always paper.
  */
 export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) {
@@ -48,7 +48,7 @@ export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) 
               : "text-[rgb(var(--foreground))]"
           }`}
           style={{ fontFamily: "var(--font-heading)" }}
-          aria-label="Jaelyn Cuellar — home"
+          aria-label="Jaelyn Cuellar - home"
         >
           {profile.name}
           <span className="text-[rgb(var(--accent))]">.</span>

@@ -10,7 +10,7 @@ type ChapterHeadProps = {
   lead?: ReactNode;
   tone?: "light" | "dark";
   align?: "left" | "center";
-  /** heading size utility — defaults to the standard chapter size */
+  /** heading size utility - defaults to the standard chapter size */
   titleClassName?: string;
   className?: string;
 };
