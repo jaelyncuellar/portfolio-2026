@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <p className="mt-3 text-white/55 max-w-md">
               {profile.title}. <br></br> {profile.location}. 
-              <br></br> engineering the extraordinary. 
+              <br></br> <i>✦ engineering the extraordinary.</i>
             </p>
           </div>
           <Link
