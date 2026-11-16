@@ -126,12 +126,14 @@ export const projects: Project[] = [
 
     ],
     description:
-      "NLP pipeline that automatically extracts themes from tens of thousands of dream journal entries using transformer embeddings and topic modeling.",
+      "An NLP pipeline that mines 25,000 dream journals from the DreamBank corpus to surface the emotions and themes that dominate dreams, combining BERTopic topic modeling with zero-shot classification from pretrained language models.",
     bullets: [
-      "Processed 23,000+ text records with transformer embeddings and BERTopic, automating theme extraction and eliminating manual labeling.",
-      "Built modular ML pipelines that reduced experimentation time by ~50%.",
+      "Narrows a DreamBank corpus of 44,556 dream reports to a cleaned set of 25,000 and extracts themes with BERTopic topic modeling over sentence transformer embeddings, comparing all-MiniLM-L6-v2 against all-mpnet-base-v2.",
+      "Runs zero-shot classification with Hugging Face NLI models (BART-MNLI, DistilBART-MNLI, XLM-RoBERTa, DeBERTa, DistilBERT) across eight emotion and social interaction labels, with no task specific training.",
+      "Evaluated with F1 scores and pairwise Jaccard agreement on 1,000 dreams: confusion and wonder were easiest to detect, anger and sadness hardest, and DistilBART-MNLI performed best overall.",
+      "Built the core ML pipeline for the team: the embedding and BERTopic workflow over the full corpus.",
     ],
-    tech: ["Python", "BERTopic", "Transformers", "NLP"],
+    tech: ["Python", "BERTopic", "Sentence Transformers", "Hugging Face", "Zero-Shot Classification", "NLI", "NLP"],
     github: null,
     featured: true,
     onResume: true,
