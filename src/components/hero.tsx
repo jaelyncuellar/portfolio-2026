@@ -129,7 +129,7 @@ export default function Hero() {
         >
           <div>
             <p className="text-white/40 text-xs uppercase tracking-[0.18em] mb-1.5">Based in</p>
-            <p className="text-white/90 font-medium">Idaho - NYC-bound Jan ✦</p>
+            <p className="text-white/90 font-medium">New York, NY ✦</p>
           </div>
           <div>
             <p className="text-white/40 text-xs uppercase tracking-[0.18em] mb-1.5">Status</p>

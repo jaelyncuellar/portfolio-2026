@@ -20,8 +20,8 @@ export default function Footer() {
               <span className="text-[rgb(var(--accent))]">.</span>
             </p>
             <p className="mt-3 text-white/55 max-w-md">
-              {profile.title} - {profile.location}. Building reliable software,
-              end to end.
+              {profile.title}. <br></br> {profile.location}. 
+              <br></br> engineering the extraordinary. 
             </p>
           </div>
           <Link

@@ -23,8 +23,7 @@ export default function Contact() {
             }
           />
           <p className="lead mx-auto mt-6">
-            Open to software engineering roles, remote or East Coast -
-            email is the fastest way to reach me.
+            Open to software engineering roles, remote, or East Coast. 
           </p>
 
           <div aria-hidden className="mt-10 flex items-center gap-4 max-w-xs mx-auto">

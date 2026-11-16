@@ -41,7 +41,7 @@ export default function Skills() {
           index="02"
           label="Skills"
           title="Technical stack"
-          lead="Production-proven tools, grouped by discipline."
+          // lead="Production-proven tools, grouped by discipline."
           className="mb-10"
         />
 
@@ -58,10 +58,10 @@ export default function Skills() {
                 className="mt-2.5 block h-px w-10 bg-[rgb(var(--accent))]"
               />
             </div>
-            <p className="text-sm text-[rgb(var(--muted))]">
+            {/* <p className="text-sm text-[rgb(var(--muted))]">
               Current focus - the stack behind my robotics portfolio
               projects.
-            </p>
+            </p> */}
           </div>
           <Chips list={featured} featured />
         </div>

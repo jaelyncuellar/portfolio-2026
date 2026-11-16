@@ -7,13 +7,13 @@ export const profile = {
   tagline:
     "From scalable systems to intelligent machines, I build what's next.",
   email: "jluvcuellar@gmail.com",
-  location: "Idaho, USA · relocating to NYC in January",
+  location: "New York, NY",
   availability: "Open to remote · NYC · East Coast · DC",
   github: "https://github.com/jaelyncuellar",
   linkedin: "https://linkedin.com/in/jaelyncuellar",
   website: "https://jaelyncuellar.com",
   summary:
-    "Software engineer with full-stack and backend experience shipping healthcare data platforms, booking systems, and ML pipelines - now building into robotics and perception: detection and tracking, sensor fusion, and ROS 2. Duke Computer Science graduate (AI & ML) who owns features end-to-end - from PostgreSQL schema and REST API to the React UI on top - and is relocating to NYC in January.",
+    "Software engineer with full-stack and backend experience. Shipped healthcare data platforms, booking systems, and ML pipelines. Currently building into robotics and perception: detection and tracking, sensor fusion, and ROS 2. Duke Computer Science graduate (AI & ML) who owns features end-to-end - from PostgreSQL schema and REST API to the React UI on top.",
   stats: [
     { value: 3, suffix: "+", label: "Years of engineering experience" },
     { value: 11, suffix: "+", label: "Projects shipped" },
