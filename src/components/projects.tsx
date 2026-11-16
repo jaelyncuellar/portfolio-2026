@@ -151,57 +151,9 @@ function FeaturedCard({ p }: { p: Project }) {
   );
 }
 
-function CompactRow({ p }: { p: Project }) {
-  return (
-    <article className="group border-b hairline py-4 grid gap-2 md:grid-cols-[auto_1fr_auto] md:gap-8 items-center">
-      {p.images && p.images.length > 0 && (
-        <Link href={`/projects/${p.slug}`} className="hidden md:block relative w-36 aspect-[16/10] overflow-hidden rounded-[var(--radius-sm)] border hairline shrink-0" aria-label={`${p.title} case study`}>
-          <Image src={p.images[0]} alt={p.title} fill sizes="144px" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
-        </Link>
-      )}
-      <div className="min-w-0">
-        <Link href={`/projects/${p.slug}`}>
-          <h3 className="text-xl font-semibold tracking-tight group-hover:text-[rgb(var(--accent-hover))] transition-colors">
-            {p.title}
-          </h3>
-        </Link>
-        <p className="mt-1 text-[0.95rem] text-[rgb(var(--muted))] leading-relaxed max-w-2xl">
-          {p.description}
-        </p>
-        <p className="mt-2 text-sm text-[rgb(var(--faint))]">{p.tech.join(" · ")}</p>
-      </div>
-      <div className="flex md:flex-col items-start gap-2 md:text-right text-sm shrink-0">
-        {(p.period || p.role) && (
-          <p className="text-[rgb(var(--faint))]">
-            {[p.role, p.period].filter(Boolean).join(" · ")}
-          </p>
-        )}
-        <Link href={`/projects/${p.slug}`} className="inline-flex items-center gap-1.5 font-semibold text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors">
-          Case study
-          <ArrowRight size={14} />
-        </Link>
-        {p.site && (
-          <a href={p.site} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors">
-            Live site
-            <ArrowUpRight size={14} />
-          </a>
-        )}
-        {p.github && (
-          <a href={p.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-medium text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] transition-colors">
-            <GithubIcon size={15} />
-            Code
-          </a>
-        )}
-      </div>
-    </article>
-  );
-}
-
 export default function Projects() {
   const [filter, setFilter] = useState<Filter>("all");
   const visible = projects.filter((p) => matches(p, filter));
-  const featured = visible.filter((p) => p.featured);
-  const rest = visible.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="section chapter-tint">
@@ -230,22 +182,11 @@ export default function Projects() {
           range and depth.
         </p>
 
-        {featured.length > 0 && (
+        {visible.length > 0 && (
           <div className="grid md:grid-cols-2 gap-x-8 gap-y-10">
-            {featured.map((p) => (
+            {visible.map((p) => (
               <FeaturedCard key={p.slug} p={p} />
             ))}
-          </div>
-        )}
-
-        {rest.length > 0 && (
-          <div className={featured.length > 0 ? "mt-12" : ""}>
-            <p className="section-label section-label--muted mb-2">More engineering</p>
-            <div className="border-t hairline">
-              {rest.map((p) => (
-                <CompactRow key={p.slug} p={p} />
-              ))}
-            </div>
           </div>
         )}
 
