@@ -120,7 +120,10 @@ export const projects: Project[] = [
     period: "Spring 2025",
     category: "personal",
     images: [
-      "/images/projects/dream-theme-analyzer.webp",
+      "/images/dream-theme-analyzer/f1-scores.webp",
+      "/images/dream-theme-analyzer/research-inspo.webp",
+      "/images/dream-theme-analyzer/sleep-dream-db.webp",
+
     ],
     description:
       "NLP pipeline that automatically extracts themes from tens of thousands of dream journal entries using transformer embeddings and topic modeling.",
@@ -222,14 +225,14 @@ export const projects: Project[] = [
     period: "Summer 2023",
     category: "personal",
     images: [
-      "/images/projects/cloud-cost-intelligence.webp",
+      "/images/cloud-cost-intelligence/flyer.webp",
     ],
-    youtube: "https://www.youtube.com/watch?v=LZ-cErVn6Es",
-    document: {
-      label: "Cloud Arbitrage - project flyer (PDF)",
-      href: "/files/cloud-arbitrage-flyer.pdf",
-      image: "/images/cloud-cost-intelligence/flyer.webp",
-    },
+    // youtube: "https://www.youtube.com/watch?v=LZ-cErVn6Es",
+    // document: {
+    //   label: "Cloud Arbitrage - project flyer (PDF)",
+    //   href: "/files/cloud-arbitrage-flyer.pdf",
+    //   image: "/images/cloud-cost-intelligence/flyer.webp",
+    // },
     description:
       "Cloud pricing analytics platform consuming live AWS and Azure spot pricing data for real-time infrastructure cost analysis.",
     tech: ["AWS", "Azure", "Python"],
