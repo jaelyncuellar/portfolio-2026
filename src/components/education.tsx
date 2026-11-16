@@ -6,7 +6,7 @@ export default function Education() {
     <section id="education" className="section-sm">
       <div className="container">
         <ChapterHead
-          index="05"
+          index="04"
           label="Education"
           title="Education"
           className="mb-8"

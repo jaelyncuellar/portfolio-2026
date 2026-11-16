@@ -14,6 +14,23 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    title: "Full-Stack Web Developer",
+    company: "Vera Rose Studio",
+    period: "Mar 2026 – May 2026",
+    location: "Idaho",
+    tags: ["Next.js", "TypeScript", "API Routes", "Cloudflare", "CI/CD"],
+    caseStudySlug: "vera-rose-studio",
+    bullets: [
+      "Built and deployed a cloud-hosted Next.js + TypeScript application, owning features end-to-end from API routes and database to UI.",
+      "Designed backend workflows for booking and notification systems and the frontend surfaces that drive them, emphasizing maintainable architecture.",
+      "Set up secure routing, automated backups, Git/GitHub CI workflows, and production monitoring; gathered requirements directly from stakeholders.",
+    ],
+    bulletsBackend: [
+      "Designed backend workflows for booking and notification systems using TypeScript and Next.js API routes.",
+      "Implemented secure routing, automated backups, and production monitoring for a cloud-hosted application.",
+    ],
+  },
+  {
     title: "Software Engineer",
     company: "CareConnect",
     period: "May 2025 – Nov 2025",
@@ -33,20 +50,13 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    title: "Full-Stack Web Developer",
-    company: "V Studio",
-    period: "Mar 2026 – May 2026",
-    location: "Idaho",
-    tags: ["Next.js", "TypeScript", "API Routes", "Cloudflare", "CI/CD"],
-    caseStudySlug: "vera-rose-studio",
+    title: "Technical Project Manager",
+    company: "Code Plus",
+    period: "Summer 2024",
+    location: "North Carolina",
+    tags: ["Agile", "Leadership", "Delivery"],
     bullets: [
-      "Built and deployed a cloud-hosted Next.js + TypeScript application, owning features end-to-end from API routes and database to UI.",
-      "Designed backend workflows for booking and notification systems and the frontend surfaces that drive them, emphasizing maintainable architecture.",
-      "Set up secure routing, automated backups, Git/GitHub CI workflows, and production monitoring; gathered requirements directly from stakeholders.",
-    ],
-    bulletsBackend: [
-      "Designed backend workflows for booking and notification systems using TypeScript and Next.js API routes.",
-      "Implemented secure routing, automated backups, and production monitoring for a cloud-hosted application.",
+      "Drove 6 concurrent Agile engineering teams to delivery of production web and data applications with zero missed sprint milestones.",
     ],
   },
   {
@@ -69,24 +79,14 @@ export const experiences: Experience[] = [
     bullets: [
       "Supported 100+ students weekly across lab sessions through hands-on code review and debugging.",
     ],
-  },
-  {
-    title: "Technical Project Manager",
-    company: "Code Plus",
-    period: "Summer 2024",
-    location: "North Carolina",
-    tags: ["Agile", "Leadership", "Delivery"],
-    bullets: [
-      "Drove 6 concurrent Agile engineering teams to delivery of production web and data applications with zero missed sprint milestones.",
-    ],
-  },
+  }
 ];
 
 /** Order of experience entries on the backend-résumé variant of the /cv page */
 export const backendExperienceOrder = [
   "Software Engineer|CareConnect",
   "Software Engineer|Code Plus",
-  "Full-Stack Web Developer|V Studio",
+  "Full-Stack Web Developer|Vera Rose Studio",
   "Teaching Assistant, Intro to Computer Science|Duke University",
   "Technical Project Manager|Code Plus",
 ];

@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="container section">
         <div className="max-w-3xl mx-auto text-center">
           <ChapterHead
-            index="06"
+            index="05"
             label="Contact"
             align="center"
             titleClassName="heading-1"

@@ -1,4 +1,4 @@
-export type ProjectCategory = "professional" | "client" | "personal" | "robotics";
+export type ProjectCategory = "professional" | "personal" | "robotics";
 
 export type Project = {
   slug: string;
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     slug: "url-shortener",
     title: "Scalable URL Shortener",
     role: "Backend Engineer",
-    period: "Present",
+    period: "Fall 2026",
     category: "personal",
     images: [
       "/images/projects/url-shortener.webp",
@@ -202,7 +202,7 @@ export const projects: Project[] = [
     role: "Web Developer",
     period: "Jun 2026 – Sep 2026",
     company: "Electric Sun Tanning",
-    category: "client",
+    category: "professional",
     images: [
       "/images/salon-booking/home.webp",
       "/images/salon-booking/booking.webp",
@@ -225,7 +225,7 @@ export const projects: Project[] = [
     title: "Cloud Cost Intelligence",
     role: "Software Engineer",
     period: "Summer 2023",
-    category: "personal",
+    category: "professional",
     images: [
       "/images/cloud-cost-intelligence/flyer.webp",
     ],
@@ -264,7 +264,7 @@ export function projectKicker(p: Project): string | null {
   if (p.category === "robotics") return "Robotics & Perception · Portfolio project";
   if (p.category === "professional" && p.company)
     return `${p.company} · Professional experience`;
-  if (p.category === "client" && p.company) return `${p.company} · Client work`;
-  if (p.category === "client") return "Client work";
+  // if (p.category === "client" && p.company) return `${p.company} · Client work`;
+  // if (p.category === "client") return "Client work";
   return null;
 }

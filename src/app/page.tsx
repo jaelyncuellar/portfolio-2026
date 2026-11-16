@@ -21,9 +21,9 @@ export default function Home() {
       <Reveal>
         <Skills />
       </Reveal>
-      <Reveal>
+      {/* <Reveal>
         <Experience />
-      </Reveal>
+      </Reveal> */}
       <Reveal>
         <Projects />
       </Reveal>

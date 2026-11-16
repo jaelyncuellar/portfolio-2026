@@ -13,7 +13,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/jaelyncuellar",
   website: "https://jaelyncuellar.com",
   summary:
-    "Software engineer with full-stack and backend experience. Shipped healthcare data platforms, booking systems, and ML pipelines. Currently building into robotics and perception: detection and tracking, sensor fusion, and ROS 2. Duke Computer Science graduate (AI & ML) who owns features end-to-end - from PostgreSQL schema and REST API to the React UI on top.",
+    "Software engineer with full-stack and backend experience. Shipped healthcare data platforms, booking systems, and ML pipelines. Currently building into robotics and perception: detection and tracking, sensor fusion, and ROS 2.",
   stats: [
     { value: 3, suffix: "+", label: "Years of engineering experience" },
     { value: 11, suffix: "+", label: "Projects shipped" },
