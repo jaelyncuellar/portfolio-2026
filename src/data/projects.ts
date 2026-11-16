@@ -201,7 +201,7 @@ export const projects: Project[] = [
     title: "Sun Tanning Salon",
     role: "Web Developer",
     period: "Jun 2026 – Sep 2026",
-    company: "Electric Sun Tanning",
+    company: "Sun Tanning Salon",
     category: "professional",
     images: [
       "/images/salon-booking/home.webp",
@@ -211,12 +211,12 @@ export const projects: Project[] = [
       "/images/salon-booking/mobile.webp",
     ],
     description:
-      "Custom Salon Booking & Analytics platform built for Electric Sun Tanning, a local Caldwell, Idaho tanning salon - a React/TypeScript web app with online booking (a three-step flow: service, date & time, details), service showcases for UV tanning, spray tanning, and the Glow Package savings program, plus a private admin dashboard with revenue analytics, service-mix charts, and booking management.",
+      "Custom Salon Booking & Analytics platform built for a local Sun Tanning Salon in Caldwell, Idaho. A React/TypeScript web app with online booking (a three-step flow: service, date & time, details), service showcases for UV tanning, spray tanning, and the Glow Package savings program, plus a private admin dashboard with revenue analytics, service-mix charts, and booking management.",
     tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Recharts"],
     video: "/images/salon-booking/walkthrough.mp4",
     poster: "/images/salon-booking/home.webp",
     github: "https://github.com/jaelyncuellar/salon-booking-analytics",
-    site: "https://www.electricsuntanningcaldwell.com",
+    // site: "https://www.electricsuntanningcaldwell.com",
     featured: true,
     onResume: false,
   },
