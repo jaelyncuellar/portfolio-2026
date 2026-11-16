@@ -1,5 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT,WONK,wght@0,9..144,0..100,0..1,500..700;1,9..144,0..100,0..1,500..700&family=Outfit:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+/* Fraunces is self-hosted: the build pipeline drops external @import rules,
+   so the Google Fonts Fraunces never reached the served CSS. These variable
+   files carry the full opsz / wght / SOFT / WONK axis set. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-italic-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   /* COLORS — deep ink background, warm cream text, fuchsia + electric teal */
