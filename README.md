@@ -13,6 +13,7 @@ Personal portfolio and interactive CV of Jaelyn Cuellar, Software Engineer - Bac
 - **Experience** - roles with scope, outcomes, and stack
 - **Selected Work** - project case studies (below), each with its own page at `/projects/<slug>`
 - **CV** - a full curriculum vitae page at `/cv`
+- **Blog** - essays on tech, health, and other topics at `/blog`, with a private author studio at `/blog/admin`
 - **Contact** - email and social links
 
 ## Projects featured
@@ -56,6 +57,18 @@ npm run build   # production build
 npm run start   # serve the production build
 npm run lint    # ESLint
 ```
+
+## Publishing blog posts
+
+The blog uses Supabase for author sign-in and post storage. To set it up:
+
+1. Create a Supabase project and run [`supabase/schema.sql`](supabase/schema.sql) in its SQL Editor.
+2. In Supabase Authentication settings, disable public sign-ups and invite only your author email. This keeps the private author studio limited to invited accounts.
+3. Add the project's URL and anon/public key to `.env.local` using [`.env.example`](.env.example). Set the same environment variables in the production hosting dashboard.
+4. Add `http://localhost:3000/blog/admin` and your deployed `/blog/admin` URL to the Supabase Auth allowed redirect URLs.
+5. Visit `/blog/admin` and request a one-time sign-in link. Write essays in Markdown, choose Tech, Health, or Other, add comma-separated tags, and save a draft or publish.
+
+The anon key is intended for browser use; never use a Supabase service-role key in the site. Row-level security in the SQL schema makes published posts public and limits drafts and post changes to the signed-in author. The blog page and author editor also show setup guidance if the environment variables have not been added yet.
 
 ## Repository structure
 

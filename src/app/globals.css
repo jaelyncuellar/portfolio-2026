@@ -408,3 +408,67 @@ body {
 .tint-center {
   background: radial-gradient(45% 55% at 50% 42%, rgb(var(--accent) / 0.10), transparent 72%);
 }
+
+.blog-content {
+  color: rgb(var(--foreground) / 0.9);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+.blog-content > * + * {
+  margin-top: 1.25em;
+}
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  margin-top: 2em;
+  color: rgb(var(--foreground));
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.blog-content h2 {
+  font-size: 1.75rem;
+}
+.blog-content h3 {
+  font-size: 1.4rem;
+}
+.blog-content a {
+  color: rgb(var(--accent-hover));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+}
+.blog-content ul {
+  list-style: disc;
+}
+.blog-content ol {
+  list-style: decimal;
+}
+.blog-content blockquote {
+  border-left: 2px solid rgb(var(--accent) / 0.7);
+  padding-left: 1.25rem;
+  color: rgb(var(--muted));
+}
+.blog-content code {
+  border-radius: 0.3rem;
+  background: rgb(var(--surface));
+  padding: 0.15rem 0.35rem;
+  font-size: 0.9em;
+}
+.blog-content pre {
+  overflow-x: auto;
+  border: 1px solid rgb(var(--border));
+  border-radius: var(--radius-md);
+  background: rgb(var(--surface));
+  padding: 1rem;
+}
+.blog-content pre code {
+  padding: 0;
+}
+.blog-content img {
+  max-width: 100%;
+  border-radius: var(--radius-md);
+}

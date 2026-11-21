@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/profile";
 
@@ -19,6 +20,7 @@ const links = [
  * then settles into a frosted paper bar. tone="light": always paper.
  */
 export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,7 +60,7 @@ export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) 
           {links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={`${pathname === "/" ? "" : "/"}${l.href}`}
               className={`transition-colors ${
                 overDark
                   ? "text-white/65 hover:text-white"
@@ -68,6 +70,16 @@ export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) 
               {l.label}
             </a>
           ))}
+          <Link
+            href="/blog"
+            className={`transition-colors ${
+              overDark
+                ? "text-white/65 hover:text-white"
+                : "text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))]"
+            }`}
+          >
+            Blog
+          </Link>
           <Link
             href="/cv"
             className="inline-flex items-center gap-1 px-5 py-2 rounded-full bg-[rgb(var(--accent))] text-white text-sm font-semibold hover:bg-[rgb(var(--accent-hover))] transition-colors"
@@ -94,13 +106,20 @@ export default function Navbar({ tone = "light" }: { tone?: "dark" | "light" }) 
             {links.map((l) => (
               <a
                 key={l.href}
-                href={l.href}
+                href={`${pathname === "/" ? "" : "/"}${l.href}`}
                 onClick={() => setMenuOpen(false)}
                 className="py-3 text-[1.05rem] border-b hairline last:border-0"
               >
                 {l.label}
               </a>
             ))}
+            <Link
+              href="/blog"
+              onClick={() => setMenuOpen(false)}
+              className="py-3 text-[1.05rem] border-b hairline"
+            >
+              Blog
+            </Link>
             <Link
               href="/cv"
               onClick={() => setMenuOpen(false)}
