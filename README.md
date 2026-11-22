@@ -62,11 +62,10 @@ npm run lint    # ESLint
 
 The blog uses Supabase for author sign-in and post storage. To set it up:
 
-1. Create a Supabase project and run [`supabase/schema.sql`](supabase/schema.sql) in its SQL Editor.
-2. In Supabase Authentication settings, disable public sign-ups and invite only your author email. This keeps the private author studio limited to invited accounts.
+1. Create a Supabase project and run [`supabase/schema.sql`](supabase/schema.sql) in its SQL Editor. If you already ran an earlier version, run the updated script again to remove the old category column.
+2. In Supabase Authentication settings, disable public sign-ups and create your author account with a password. This keeps the private author studio limited to your account.
 3. Add the project's URL and anon/public key to `.env.local` using [`.env.example`](.env.example). Set the same environment variables in the production hosting dashboard.
-4. Add `http://localhost:3000/blog/admin` and your deployed `/blog/admin` URL to the Supabase Auth allowed redirect URLs.
-5. Visit `/blog/admin` and request a one-time sign-in link. Write essays in Markdown, choose Tech, Health, or Other, add comma-separated tags, and save a draft or publish.
+4. Visit `/blog/admin` and sign in with your author email and password. Write essays in Markdown, add comma-separated tags, and save a draft or publish. The public blog automatically creates filters from tags used on published essays.
 
 The anon key is intended for browser use; never use a Supabase service-role key in the site. Row-level security in the SQL schema makes published posts public and limits drafts and post changes to the signed-in author. The blog page and author editor also show setup guidance if the environment variables have not been added yet.
 

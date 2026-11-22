@@ -53,7 +53,6 @@ export default async function BlogPostPage({ params }: Props) {
         >
           <ArrowLeft size={16} /> All essays
         </Link>
-        <p className="section-label mb-3">{post.category}</p>
         <h1 className="heading-1">{post.title}</h1>
         <p className="mt-5 text-lg text-[rgb(var(--muted))]">{post.excerpt}</p>
         <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[rgb(var(--faint))]">

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { ArrowLeft, LogOut, Plus, Trash2 } from "lucide-react";
-import { blogCategories, type BlogCategory, type BlogPost } from "@/data/blog";
+import type { BlogPost } from "@/data/blog";
 import { getSupabaseClient } from "@/lib/supabase";
 
 type Draft = {
@@ -11,7 +11,6 @@ type Draft = {
   slug: string;
   excerpt: string;
   content: string;
-  category: BlogCategory;
   tags: string;
 };
 
@@ -20,7 +19,6 @@ const emptyDraft: Draft = {
   slug: "",
   excerpt: "",
   content: "",
-  category: "Tech",
   tags: "",
 };
 
@@ -35,9 +33,10 @@ function slugify(value: string) {
 export default function BlogAdmin() {
   const supabase = getSupabaseClient();
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [userId, setUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(Boolean(supabase));
-  const [sendingLink, setSendingLink] = useState(false);
+  const [signingIn, setSigningIn] = useState(false);
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -106,26 +105,23 @@ export default function BlogAdmin() {
     };
   }, [supabase, userId]);
 
-  async function sendSignInLink(event: FormEvent<HTMLFormElement>) {
+  async function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!supabase) return;
 
-    setSendingLink(true);
+    setSigningIn(true);
     setMessage("");
     setErrorMessage("");
-    const { error } = await supabase.auth.signInWithOtp({
+    const { error } = await supabase.auth.signInWithPassword({
       email,
-      options: {
-        shouldCreateUser: false,
-        emailRedirectTo: `${window.location.origin}/blog/admin`,
-      },
+      password,
     });
-    setSendingLink(false);
+    setSigningIn(false);
     if (error) {
-      setErrorMessage(`Could not send sign-in link: ${error.message}`);
+      setErrorMessage(`Could not sign in: ${error.message}`);
       return;
     }
-    setMessage("If this email has an author account, a sign-in link is on its way.");
+    setPassword("");
   }
 
   function startNewPost() {
@@ -142,7 +138,6 @@ export default function BlogAdmin() {
       slug: post.slug,
       excerpt: post.excerpt,
       content: post.content,
-      category: post.category,
       tags: post.tags.join(", "),
     });
     setMessage("");
@@ -161,7 +156,6 @@ export default function BlogAdmin() {
       slug: slugify(draft.slug || draft.title),
       excerpt: draft.excerpt.trim(),
       content: draft.content.trim(),
-      category: draft.category,
       tags: draft.tags
         .split(",")
         .map((tag) => tag.trim().replace(/^#/, ""))
@@ -199,7 +193,6 @@ export default function BlogAdmin() {
       slug: result.data.slug,
       excerpt: result.data.excerpt,
       content: result.data.content,
-      category: result.data.category,
       tags: result.data.tags.join(", "),
     });
     await loadPosts();
@@ -268,10 +261,10 @@ export default function BlogAdmin() {
             Checking sign-in…
           </p>
         ) : !userId ? (
-          <form onSubmit={sendSignInLink} className="panel-soft mt-8 max-w-xl p-6 md:p-8">
+          <form onSubmit={signIn} className="panel-soft mt-8 max-w-xl p-6 md:p-8">
             <h2 className="heading-3">Sign in to write</h2>
             <p className="mt-2 text-sm text-[rgb(var(--muted))]">
-              Enter your invited author email and we&apos;ll send a one-time sign-in link.
+              Sign in with your author email and password.
             </p>
             <label htmlFor="author-email" className="mt-6 block text-sm font-medium">
               Email address
@@ -285,12 +278,24 @@ export default function BlogAdmin() {
               onChange={(event) => setEmail(event.target.value)}
               className="mt-2 w-full rounded-xl border hairline bg-[rgb(var(--background))] px-4 py-3 outline-none focus:border-[rgb(var(--accent))]"
             />
+            <label htmlFor="author-password" className="mt-5 block text-sm font-medium">
+              Password
+            </label>
+            <input
+              id="author-password"
+              required
+              type="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              className="mt-2 w-full rounded-xl border hairline bg-[rgb(var(--background))] px-4 py-3 outline-none focus:border-[rgb(var(--accent))]"
+            />
             <button
               type="submit"
-              disabled={sendingLink}
+              disabled={signingIn}
               className="mt-5 rounded-full bg-[rgb(var(--accent))] px-5 py-2.5 font-semibold text-white transition-colors hover:bg-[rgb(var(--accent-hover))] disabled:opacity-60"
             >
-              {sendingLink ? "Sending…" : "Email me a sign-in link"}
+              {signingIn ? "Signing in…" : "Sign in"}
             </button>
           </form>
         ) : (
@@ -367,31 +372,7 @@ export default function BlogAdmin() {
                 className="mt-2 w-full rounded-xl border hairline bg-[rgb(var(--background))] px-4 py-3 outline-none focus:border-[rgb(var(--accent))]"
               />
 
-              <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="post-category" className="block text-sm font-medium">
-                    Category
-                  </label>
-                  <select
-                    id="post-category"
-                    value={draft.category}
-                    onChange={(event) =>
-                      setDraft((current) => ({
-                        ...current,
-                        category:
-                          blogCategories.find(
-                            (category) => category === event.target.value,
-                          ) ?? "Tech",
-                      }))
-                    }
-                    className="mt-2 w-full rounded-xl border hairline bg-[rgb(var(--background))] px-4 py-3"
-                  >
-                    {blogCategories.map((category) => (
-                      <option key={category}>{category}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
+              <div className="mt-5">
                   <label htmlFor="post-tags" className="block text-sm font-medium">
                     Tags <span className="text-[rgb(var(--faint))]">(comma-separated)</span>
                   </label>
@@ -404,7 +385,6 @@ export default function BlogAdmin() {
                     placeholder="AI, robotics, research"
                     className="mt-2 w-full rounded-xl border hairline bg-[rgb(var(--background))] px-4 py-3 outline-none focus:border-[rgb(var(--accent))]"
                   />
-                </div>
               </div>
 
               <label htmlFor="post-content" className="mt-5 block text-sm font-medium">
@@ -466,7 +446,10 @@ export default function BlogAdmin() {
                         </button>
                       </div>
                       <p className="mt-2 text-xs text-[rgb(var(--faint))]">
-                        {post.published ? "Published" : "Draft"} · {post.category}
+                        {post.published ? "Published" : "Draft"}
+                        {post.tags.length
+                          ? ` · ${post.tags.map((tag) => `#${tag}`).join(" ")}`
+                          : ""}
                       </p>
                     </li>
                   ))}

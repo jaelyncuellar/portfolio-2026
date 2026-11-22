@@ -5,7 +5,6 @@ create table if not exists public.blog_posts (
   title text not null check (char_length(title) between 1 and 160),
   excerpt text not null check (char_length(excerpt) between 1 and 300),
   content text not null check (char_length(content) > 0),
-  category text not null check (category in ('Tech', 'Health', 'Other')),
   tags text[] not null default '{}',
   published boolean not null default false,
   published_at timestamptz,
@@ -13,6 +12,7 @@ create table if not exists public.blog_posts (
   updated_at timestamptz not null default now()
 );
 
+alter table public.blog_posts drop column if exists category;
 alter table public.blog_posts enable row level security;
 
 grant select on public.blog_posts to anon;

@@ -1,7 +1,3 @@
-export const blogCategories = ["Tech", "Health", "Other"] as const;
-
-export type BlogCategory = (typeof blogCategories)[number];
-
 export type BlogPost = {
   id: string;
   author_id: string;
@@ -9,7 +5,6 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   content: string;
-  category: BlogCategory;
   tags: string[];
   published: boolean;
   published_at: string | null;

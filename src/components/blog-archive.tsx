@@ -4,35 +4,55 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { BlogPost } from "@/data/blog";
 
-const filters = ["All", "Tech", "Health", "Other"] as const;
-type Filter = (typeof filters)[number];
-
 export default function BlogArchive({ posts }: { posts: BlogPost[] }) {
-  const [filter, setFilter] = useState<Filter>("All");
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const tags = useMemo(
+    () =>
+      Array.from(
+        new Map(
+          posts.flatMap((post) =>
+            post.tags.map((tag) => [tag.toLocaleLowerCase(), tag] as const),
+          ),
+        ).values(),
+      ).sort((a, b) => a.localeCompare(b)),
+    [posts],
+  );
   const visiblePosts = useMemo(
     () =>
-      filter === "All"
-        ? posts
-        : posts.filter((post) => post.category === filter),
-    [filter, posts],
+      posts.filter(
+        (post) =>
+          selectedTag === null ||
+          post.tags.some(
+            (tag) => tag.toLocaleLowerCase() === selectedTag.toLocaleLowerCase(),
+          ),
+      ),
+    [posts, selectedTag],
   );
+  const filters = [
+    { label: "All posts", tag: null },
+    ...tags.map((tag) => ({ label: tag, tag })),
+  ];
 
   return (
     <>
       <div className="mt-10 flex flex-wrap gap-2" aria-label="Filter posts">
-        {filters.map((item) => (
+        {filters.map(({ label, tag }) => (
           <button
-            key={item}
+            key={label}
             type="button"
-            onClick={() => setFilter(item)}
-            aria-pressed={filter === item}
+            onClick={() => setSelectedTag(tag)}
+            aria-pressed={tag === null
+              ? selectedTag === null
+              : selectedTag?.toLocaleLowerCase() === tag.toLocaleLowerCase()}
             className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${
-              filter === item
+              (tag === null && selectedTag === null) ||
+              (tag !== null &&
+                selectedTag?.toLocaleLowerCase() === tag.toLocaleLowerCase())
                 ? "border-[rgb(var(--accent))] bg-[rgb(var(--accent)/0.14)] text-[rgb(var(--foreground))]"
                 : "hairline text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))]"
             }`}
           >
-            {item}
+            {label}
           </button>
         ))}
       </div>
@@ -45,9 +65,8 @@ export default function BlogArchive({ posts }: { posts: BlogPost[] }) {
               className="panel-soft flex h-full flex-col p-6 md:p-8"
             >
               <div className="flex items-center justify-between gap-3">
-                <span className="section-label">{post.category}</span>
                 <time
-                  className="text-sm text-[rgb(var(--faint))]"
+                  className="ml-auto text-sm text-[rgb(var(--faint))]"
                   dateTime={post.published_at ?? post.created_at}
                 >
                   {new Date(post.published_at ?? post.created_at).toLocaleDateString(
@@ -93,9 +112,9 @@ export default function BlogArchive({ posts }: { posts: BlogPost[] }) {
         <div className="mt-8 rounded-[var(--radius-lg)] border hairline bg-[rgb(var(--surface))] px-6 py-12 text-center">
           <p className="heading-3">Nothing here just yet.</p>
           <p className="mt-2 text-[rgb(var(--muted))]">
-            {filter === "All"
+            {selectedTag === null
               ? "New essays are on their way. Check back soon."
-              : `No ${filter.toLowerCase()} essays yet. Try another topic.`}
+              : `No essays tagged “${selectedTag}” yet. Try another tag.`}
           </p>
         </div>
       )}

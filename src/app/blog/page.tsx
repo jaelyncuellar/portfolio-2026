@@ -36,11 +36,10 @@ export default async function BlogPage() {
       <section className="container max-w-5xl pb-24 pt-32 md:pt-40">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="section-label mb-3">Notes, ideas &amp; rabbit holes</p>
+            <p className="section-label mb-3">Musings</p>
             <h1 className="heading-1">Blog</h1>
             <p className="lead mt-5">
-              A space for essays on tech, health, and whatever else I can&apos;t
-              stop thinking about.
+            A space for all the things I find interesting or simply worth sharing.
             </p>
           </div>
           <Link
