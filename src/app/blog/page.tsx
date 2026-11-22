@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Blog | Jaelyn Cuellar",
   description:
-    "Notes and essays on technology, health, and everything in between.",
+    "Notes and articles on technology, health, and everything in between.",
 };
 
 export default async function BlogPage() {
