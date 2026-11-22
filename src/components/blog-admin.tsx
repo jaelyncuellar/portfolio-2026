@@ -186,7 +186,7 @@ export default function BlogAdmin() {
       return;
     }
 
-    setMessage(published ? "Your essay is published." : "Draft saved.");
+    setMessage(published ? "Your article is published." : "Draft saved.");
     setEditing(result.data);
     setDraft({
       title: result.data.title,
@@ -309,7 +309,7 @@ export default function BlogAdmin() {
             >
               <div className="flex items-center justify-between gap-4">
                 <h2 className="heading-3">
-                  {editing ? "Edit essay" : "Write an essay"}
+                  {editing ? "Edit article" : "Write an article"}
                 </h2>
                 {editing && (
                   <button
@@ -388,7 +388,7 @@ export default function BlogAdmin() {
               </div>
 
               <label htmlFor="post-content" className="mt-5 block text-sm font-medium">
-                Essay <span className="text-[rgb(var(--faint))]">(Markdown supported)</span>
+                Article <span className="text-[rgb(var(--faint))]">(Markdown supported)</span>
               </label>
               <textarea
                 id="post-content"
@@ -414,7 +414,7 @@ export default function BlogAdmin() {
                   onClick={() => void savePost(true)}
                   className="rounded-full bg-[rgb(var(--accent))] px-5 py-2.5 font-semibold text-white transition-colors hover:bg-[rgb(var(--accent-hover))] disabled:opacity-60"
                 >
-                  {saving ? "Saving…" : editing?.published ? "Update & publish" : "Publish essay"}
+                  {saving ? "Saving…" : editing?.published ? "Update & publish" : "Publish article"}
                 </button>
               </div>
             </form>
@@ -456,7 +456,7 @@ export default function BlogAdmin() {
                 </ul>
               ) : (
                 <p className="text-sm text-[rgb(var(--muted))]">
-                  Your saved essays will show up here.
+                  Your saved articles will show up here.
                 </p>
               )}
               <button
@@ -464,7 +464,7 @@ export default function BlogAdmin() {
                 onClick={startNewPost}
                 className="mt-4 inline-flex items-center gap-2 text-sm text-[rgb(var(--accent-hover))] hover:text-white"
               >
-                <Plus size={16} /> Start a new essay
+                <Plus size={16} /> Start a new article
               </button>
             </aside>
           </div>

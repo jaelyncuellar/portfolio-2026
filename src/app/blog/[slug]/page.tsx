@@ -14,7 +14,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const supabase = getSupabaseClient();
-  if (!supabase) return { title: "Essay | Jaelyn Cuellar" };
+  if (!supabase) return { title: "Article | Jaelyn Cuellar" };
 
   const { data } = await supabase
     .from("blog_posts")
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return data
     ? { title: `${data.title} | Jaelyn Cuellar`, description: data.excerpt }
-    : { title: "Essay | Jaelyn Cuellar" };
+    : { title: "Article | Jaelyn Cuellar" };
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: Props) {
           href="/blog"
           className="mb-10 inline-flex items-center gap-2 text-sm text-[rgb(var(--muted))] transition-colors hover:text-[rgb(var(--foreground))]"
         >
-          <ArrowLeft size={16} /> All essays
+          <ArrowLeft size={16} /> All articles
         </Link>
         <h1 className="heading-1">{post.title}</h1>
         <p className="mt-5 text-lg text-[rgb(var(--muted))]">{post.excerpt}</p>

@@ -102,19 +102,19 @@ export default function BlogArchive({ posts }: { posts: BlogPost[] }) {
                   href={`/blog/${post.slug}`}
                   className="u-link ml-auto text-sm font-medium"
                 >
-                  Read essay
+                  Read article
                 </Link>
               </div>
             </article>
           ))}
         </div>
       ) : (
-        <div className="mt-8 rounded-[var(--radius-lg)] border hairline bg-[rgb(var(--surface))] px-6 py-12 text-center">
+        <div className="mt-8 rounded-lg border hairline bg-[rgb(var(--surface))] px-6 py-12 text-center">
           <p className="heading-3">Nothing here just yet.</p>
           <p className="mt-2 text-[rgb(var(--muted))]">
             {selectedTag === null
-              ? "New essays are on their way. Check back soon."
-              : `No essays tagged “${selectedTag}” yet. Try another tag.`}
+              ? "New articles are on their way. Check back soon."
+              : `No articles tagged “${selectedTag}” yet. Try another tag.`}
           </p>
         </div>
       )}
